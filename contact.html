@@ -4,6 +4,12 @@
 <link rel="stylesheet" href="external.CSS">
 <link rel="stylesheet" href="contact.css">
 
+<script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"
+></script>
+
 </style>
 </head>
 <body>
@@ -13,7 +19,7 @@
         </div>
         
         <div class = "form">
-            <form method = "get" action = "#">
+            <form id = "contactForm" method = "get" action = "#">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name"><br><br>
                 <label for="email">Email:</label><br>
@@ -26,5 +32,8 @@
             </form>
         </div>
         </div>
+    <script>
+        $("#contactForm").validate();
+    </script>
 </body>
 </html>
