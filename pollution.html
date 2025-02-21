@@ -29,9 +29,10 @@
                     $('.image img').fadeIn(1000);
                 });
             }
-           
 
-            $(".images img").on("click", startSlideshow());
+            $(".images img").on("click", function() {
+                startSlideshow();
+            });
 
             function startSlideshow(){
                 fadeImages();
