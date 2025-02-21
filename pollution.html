@@ -5,5 +5,41 @@
 </style>
 </head>
 <body>
+
+    <div class = "images">
+        <img src = "images/nature1.jpg" alt = "nature1">
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var imageUrls = [
+                "Images/pollution1.jpg",
+                "Images/pollution2.jpg"
+            ];
+
+            var currIndex = 0;
+            var interval;
+
+            
+            function fadeImages(){
+
+                $(".images img").fadeOut(1000, function() {
+                    currIndex = (currIndex + 1) % 5
+                    $('.image img').attr("src", imageUrls[currIndex]);
+                    $('.image img').fadeIn(1000);
+                });
+            }
+           
+
+            $(".images img").click(function() {
+                fadeImages();
+                setInterval(fadeImages, 2000);
+            });
+
+        });
+    
+        
+        
+    </script>
 </body>
 </html>
