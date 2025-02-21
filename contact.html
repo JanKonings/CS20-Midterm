@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html> 
 <head>
-<link rel="stylesheet" href="external.CSS">
+<link rel="stylesheet" href="header.CSS">
 <link rel="stylesheet" href="contact.css">
 
-</style>
+<script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"
+></script>
 </head>
 <body>
+    <div class="navbar">
+        <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
+        <h1>OceanAid</h1>
+        <div class="nav-links">
+            <a id="donate-link" href="donate.html">Donate</a>
+            <a id="aboutUs" href="aboutUs.html">About Us</a>
+            <a id="species" href="species.html">Species</a>
+            <a id="pollution" href="pollution.html">Pollution</a>
+            <a id="getInvolved" href="getInvolved.html">Get Involved</a>
+            <a id="contact" href="contact.html">Contact</a>
+        </div>
+    </div>
+    
     <div class = "formContent">
         <div class = "formDescription">
             <h1>For questions or inquiries, please fill out this form</h1>
         </div>
         
         <div class = "form">
-            <form method = "get" action = "#">
+            <form id = "contactForm" method = "get" action = "#">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name"><br><br>
                 <label for="email">Email:</label><br>
@@ -26,5 +43,8 @@
             </form>
         </div>
         </div>
+    <script>
+        $("#contactForm").validate();
+    </script>
 </body>
 </html>
