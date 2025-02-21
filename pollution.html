@@ -25,8 +25,8 @@
 
                 $(".images img").fadeOut(1000, function() {
                     currIndex = (currIndex + 1) % 2;
-                    $('.image img').attr("src", imageUrls[currIndex]);
-                    $('.image img').fadeIn(1000);
+                    $('.images img').attr("src", imageUrls[currIndex]);
+                    $('.images img').fadeIn(1000);
                 });
             }
 
