@@ -1,0 +1,61 @@
+.info {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;    
+    background-color: rgb(94, 110, 200);
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+.info h2 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+.info p {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+}
+
+ul#speciesList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    flex: 1;
+    list-style-type: none;
+    margin: 0;
+}
+
+ul#speciesList li {
+    width: 100%; /* Adjust width for box size */
+    height: 300px; /* Adjust height for box size */
+    background-color: #d6dbec; /* Box color */
+    border: 1px solid #fff;
+    display: flex;
+    color: black; /* Text color inside the box */
+    font-size: 16px; /* Font size */
+    box-sizing: border-box;
+    align-items: center; 
+}
+
+
+.speciestext {
+    width: 50%;
+    height: 100%;    
+    background-color: blue;
+}
+
+.speciesImage {
+    width: 50%;
+    height: 100%;
+    background-color: black;
+}
+
