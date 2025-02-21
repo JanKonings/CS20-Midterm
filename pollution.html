@@ -31,10 +31,12 @@
             }
            
 
-            $(".images img").click(function() {
+            $(".images img").on("click", startSlideshow());
+
+            function startSlideshow(){
                 fadeImages();
                 setInterval(fadeImages, 2000);
-            });
+            }
 
         });
     
