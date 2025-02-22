@@ -3,3 +3,13 @@
     margin-top: 75px;
     vertical-align: middle;
 }
+
+.images img{
+    border-radius: 10px;
+    width:auto;
+    height: auto;
+}
+
+body{
+    background-color: #b0c4e9;
+}
