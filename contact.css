@@ -1,4 +1,3 @@
-
 .form form {
     max-width: 600px;
     margin: 0 auto;
@@ -11,6 +10,7 @@
 .form label {
     font-weight: bold;
     color: #2c3e50;
+    font-family: 'Outfit', sans-serif; 
 }
 
 .form input[type="text"],
@@ -23,6 +23,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    font-family: 'Outfit', sans-serif; 
 }
 
 .form input[type="submit"] {
@@ -39,9 +40,10 @@
 }
 
 .formDescription h1 {
+    font-family: 'Outfit', sans-serif; 
     text-align: center;
     color: #2c3e50;
     font-size: 36px;
-    margin-top: 50px;
+    margin-top: 30px;
     font-weight: normal;
 }
