@@ -29,19 +29,22 @@
         <p>Thank you for considering a donation to OceanAid. Your contribution will help us continue our work to protect marine life and preserve the health of our oceans. Please fill out the form below to make a donation.</p>
 
         <form id="donateForm" action="#" method="post">
-            <button type="button" id="singleTime"> One-Time</button>
-            <button type="button" id="monthly"> Monthly</button>
-            <br>
-            <input type="radio" name="donationAmount" id="10" class="customRadio">
-            <label for="10">$10</label>
-            <input type="radio" name="donationAmount" id="25" class="customRadio">
-            <label for="25">$25</label>
-            <input type="radio" name="donationAmount" id="50" class="customRadio">
-            <label for="50">$50</label>
-            <input type="radio" name="donationAmount" id="100" class="customRadio">
-            <label for="100">$100</label>
-            <input type="text" id="customAmount" placeholder="Custom Amount : $">
+            <div class="buttonContainer">
+                <button type="button" id="singleTime"> One-Time</button>
+                <button type="button" id="monthly"> Monthly</button>
+            </div>
+            <div class="amount">
+                <input type="radio" name="donationAmount" id="10" class="customRadio">
+                <label for="10">$10</label>
+                <input type="radio" name="donationAmount" id="25" class="customRadio">
+                <label for="25">$25</label>
+                <input type="radio" name="donationAmount" id="50" class="customRadio">
+                <label for="50">$50</label>
+                <input type="radio" name="donationAmount" id="100" class="customRadio">
+                <label for="100">$100</label>
+            </div>
             
+            <input type="text" id="customAmount" placeholder="Custom Amount : $">
         </form>
 
         <script>
