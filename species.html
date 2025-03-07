@@ -53,20 +53,33 @@
     <script>
         // waiting for document to load before running script
         $(document).ready(function() {
-            // making a click fucntion for the filter button
-            $("#filter").click(function() {
-                // creating blank string to hold the output content
-                var output = "";
-                // collect the chosen category for the dop down menu
-                var categoryFilter = $("#Categories").val();
-                // get the JSON file and run function
-                $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
+            $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
+                var initialList = "";
+                for (var animal in animals) {
+                    animals[animal].forEach(function(species) {
+                        initialList += "<div class='species'>";
+                        initialList += "<h3>" + species.name + "</h3>";
+                        initialList += "<p>Scientific Name: " + species.scientificName + "</p>";
+                        initialList += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
+                        initialList += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
+                        initialList += "</div>";
+                    });
+                }
+                $(".output").html(initialList);
+
+                // making a click fucntion for the filter button
+                $("#filter").click(function() {
+                    // creating blank string to hold the output content
+                    var output = "";
+                    // collect the chosen category for the dop down menu
+                    var categoryFilter = $("#Categories").val();
+                    // get the JSON file and run function
                     // If the chosen filter is all, every product should be added
                     if (categoryFilter === "all") {
                         for (var animal in animals) {
                             animals[animal].forEach(function(species) {
                                 output += "<div class='species'>";
-                                output += "<h3>Name: " + species.name + "</h3>";
+                                output += "<h3>" + species.name + "</h3>";
                                 output += "<p>Scientific Name: " + species.scientificName + "</p>";
                                 output += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
                                 output += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
@@ -80,7 +93,7 @@
                     } else if (animals[categoryFilter]) {
                         animals[categoryFilter].forEach(function(species) {
                             output += "<div class='species'>";
-                            output += "<h3>Name: " + species.name + "</h3>";
+                            output += "<h3>" + species.name + "</h3>";
                             output += "<p>Scientific Name: " + species.scientificName + "</p>";
                             output += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
                             output += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
@@ -89,7 +102,6 @@
 
                         $(".output").html(output); 
                     }
-                   
                 });
             });
         });
