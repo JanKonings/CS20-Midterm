@@ -54,19 +54,33 @@
         $(document).ready(function() {
             $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
                 var initialList = "";
+                var loadedImages = 0;
+                var numImages = 0;
                 for (var animal in animals) {
                     animals[animal].forEach(function(species) {
+                        numImages++;
                         initialList += "<div class='species'>";
+                        initialList += "<div class='specieInfo'>";
                         initialList += "<h3>" + species.name + "</h3>";
                         initialList += "<p>Scientific Name: " + species.scientificName + "</p>";
                         initialList += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
                         initialList += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
-                        initialList += "<img src='Images/" + species.name + ".jpg'>";
+                        initialList += "</div>";
+                        initialList += "<img class='speciesImage' src='Images/" + species.name + ".jpg'>";
                         initialList += "</div>";
                     });
                 }
+
                 $(".output").html(initialList);
 
+                $(".species-image").on("load", function () {
+                    loadedImages++
+
+                    if (loadedImages === numImages) {
+                        $("img").fadeIn();                    
+                    }
+                })
+                    
                 // making a click fucntion for the filter button
                 $("#filter").click(function() {
                     // creating blank string to hold the output content
