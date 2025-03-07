@@ -100,17 +100,51 @@ button#singleTime.active {
     border: 1px solid #2c3e50;
 }
 
-input[type="text"] {
+.customRadio {
     width: 100%;
     height: 40px;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #2c3e50;
     border-radius: 5px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+.nameForm {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+#customAmount {
+    width: 100%;   
+    height: 40px; 
+    border-radius: 5px;
+    border: 1px solid #2c3e50;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
 h3 {
     font-size: 20px;
     color: black;
+    margin: 0;
+}
+
+
+.personalInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Ensures two equal columns */
+    grid-template-rows: auto auto; /* Adjusts row heights dynamically */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    gap: 10px;
+}
+
+.infoElement {
+    width: 100%;
+    margin: 0;
 }
