@@ -1,10 +1,10 @@
 {
     "turtles": [
         {
-            "name": "Loggerhead Sea Turtle",
+            "name": "loggerhead",
             "scientificName": "Caretta caretta",
             "reasonForEndangerment": "Habitat loss, poaching, climate change.",
-            "roleInEcosystem": "Maintain healthy seagrass beds and coral reefs."
+            "roleInEcosystem": "Maintain healthy seagrass beds and coral reefs.",
         },
         {
             "name": "Green Sea Turtle",
