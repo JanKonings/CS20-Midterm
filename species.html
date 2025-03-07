@@ -51,72 +51,68 @@
 
     <script>
         // waiting for document to load before running script
-        $(document).ready(function() {
-            $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
-                var initialList = "";
-                var loadedImages = 0;
-                var numImages = 0;
-                for (var animal in animals) {
-                    animals[animal].forEach(function(species) {
-                        numImages++;
-                        initialList += "<div class='species'>";
-                        initialList += "<div class='specieInfo'>";
-                        initialList += "<h3>" + species.name + "</h3>";
-                        initialList += "<p>Scientific Name: " + species.scientificName + "</p>";
-                        initialList += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
-                        initialList += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
-                        initialList += "</div>";
-                        initialList += "<img class='speciesImage' src='Images/" + species.name + ".jpg'>";
-                        initialList += "</div>";
-                    });
-                }
+        $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
+            var initialList = "";
+            for (var animal in animals) {
+                animals[animal].forEach(function(species) {
+                    initialList += "<div class='species'>";
+                    initialList += "<div class='specieInfo'>";
+                    initialList += "<h3>" + species.name + "</h3>";
+                    initialList += "<p>Scientific Name: " + species.scientificName + "</p>";
+                    initialList += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
+                    initialList += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
+                    initialList += "</div>";
+                    initialList += "<img class='speciesImage' src='Images/" + species.name + ".jpg'>";
+                    initialList += "</div>";
+                });
+            }
 
+            $(document).ready(function() {
                 $(".output").html(initialList);
+            });
 
-                $(".species-image").on("load", function () {
-                    loadedImages++
-
-                    if (loadedImages === numImages) {
-                        $("img").fadeIn();                    
-                    }
-                })
-                    
-                // making a click fucntion for the filter button
-                $("#filter").click(function() {
-                    // creating blank string to hold the output content
-                    var output = "";
-                    // collect the chosen category for the dop down menu
-                    var categoryFilter = $("#Categories").val();
-                    // get the JSON file and run function
-                    // If the chosen filter is all, every product should be added
-                    if (categoryFilter === "all") {
-                        for (var animal in animals) {
-                            animals[animal].forEach(function(species) {
-                                output += "<div class='species'>";
-                                output += "<h3>" + species.name + "</h3>";
-                                output += "<p>Scientific Name: " + species.scientificName + "</p>";
-                                output += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
-                                output += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
-                                output += "</div>";
-                            });
-                        }
-                        $(".output").html(output); 
-                    // if the category is not "all", then if the categories tag of 
-                    // the JSON includes a category that matches the chosen category
-                    // we also include the content
-                    } else if (animals[categoryFilter]) {
-                        animals[categoryFilter].forEach(function(species) {
+                
+            // making a click fucntion for the filter button
+            $("#filter").click(function() {
+                // creating blank string to hold the output content
+                var output = "";
+                // collect the chosen category for the dop down menu
+                var categoryFilter = $("#Categories").val();
+                // get the JSON file and run function
+                // If the chosen filter is all, every product should be added
+                if (categoryFilter === "all") {
+                    for (var animal in animals) {
+                        animals[animal].forEach(function(species) {
                             output += "<div class='species'>";
+                            output += "<div class='specieInfo'>";
                             output += "<h3>" + species.name + "</h3>";
                             output += "<p>Scientific Name: " + species.scientificName + "</p>";
                             output += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
                             output += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
                             output += "</div>";
+                            output += "<img class='speciesImage' src='Images/" + species.name + ".jpg'>";
+                            output += "</div>";
                         });
-
-                        $(".output").html(output); 
                     }
-                });
+                    $(".output").html(output); 
+                // if the category is not "all", then if the categories tag of 
+                // the JSON includes a category that matches the chosen category
+                // we also include the content
+                } else if (animals[categoryFilter]) {
+                    animals[categoryFilter].forEach(function(species) {
+                        output += "<div class='species'>";
+                        output += "<div class='specieInfo'>";
+                        output += "<h3>" + species.name + "</h3>";
+                        output += "<p>Scientific Name: " + species.scientificName + "</p>";
+                        output += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
+                        output += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
+                        output += "</div>";
+                        output += "<img class='speciesImage' src='Images/" + species.name + ".jpg'>";
+                        output += "</div>";
+                    });
+
+                    $(".output").html(output); 
+                }
             });
         });
     </script>
