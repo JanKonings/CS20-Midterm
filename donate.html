@@ -44,7 +44,7 @@
                 <label for="100">$100</label>
             </div>
 
-            <input type="text" id="customAmount" placeholder="Custom Amount : $">
+            <input type="text" id="customAmount" class="spanText" placeholder="Custom Amount : $">
 
             <div class="personalInfo">
                 <div class="infoElement">
@@ -67,7 +67,21 @@
                     <input type="text" id="phone" class="nameForm">
                 </div>
             </div>
+
+            <div class="creditCardInfo">
+                <h3>Payment Method</h3>
+                <select id="paymentMethod">
+                    <option value="" disabled selected>Choose Method</option>
+                    <option value="Credit">Credit/Debit Card</option>
+                    <option value="Bank">Bank Account</option>
+                </select>
+
+                <div class="method"></div>
+            </div>
             
+            <div class="submitButton">
+                <button type="submit" id="submit"> Submit</button>
+            </div>
         </form>
 
         <script>
@@ -90,6 +104,68 @@
                         label.text("$" + $(this).attr("id") + " / month");
                     });
                     $("#customAmount").attr("placeholder", "Custom Amount : $ / month");
+                });
+
+                $("#paymentMethod").change(function(){
+                    var output = "";
+                    if ($(this).val() === "Credit") {
+                        output += "<input type='text' id='cardNum' class='spanText' placeholder='Card Number'>";
+                        output += "<h3>Expiration Details</h3>";
+                        output += "<div class='cardInfo'>";
+                        output += "<select id='monthSelect' name='month'>" +
+                            "<option value='' disabled selected>Month</option>" +
+
+                                        "<option value='01'>January</option>" +
+                                        "<option value='02'>February</option>" +
+                                        "<option value='03'>March</option>" +
+                                        "<option value='04'>April</option>" +
+                                        "<option value='05'>May</option>" +
+                                        "<option value='06'>June</option>" +
+                                        "<option value='07'>July</option>" +
+                                        "<option value='08'>August</option>" +
+                                        "<option value='09'>September</option>" +
+                                        "<option value='10'>October</option>" +
+                                        "<option value='11'>November</option>" +
+                                        "<option value='12'>December</option>" +
+                                    "</select>";
+                        output += "<select id='yearSelect' name='year'>" +
+                            "<option value='' disabled selected>Year</option>" +
+                                        "<option value='2025'>2025</option>" +
+                                        "<option value='2026'>2026</option>" +
+                                        "<option value='2027'>2027</option>" +
+                                        "<option value='2028'>2028</option>" +
+                                        "<option value='2029'>2029</option>" +
+                                        "<option value='2030'>2030</option>" +
+                                        "<option value='2031'>2031</option>" +
+                                        "<option value='2032'>2032</option>" +
+                                        "<option value='2033'>2033</option>" +
+                                        "<option value='2034'>2034</option>" +
+                                        "<option value='2035'>2035</option>" +
+                                    "</select>";
+                        output += "<input type='text' id='CVV' class='spanText' placeholder='CVV'>";
+                        output += "</div>";
+                    } else if ($(this).val() === "Bank") {
+                        output += "<input type='text' id='routingNum' class='spanText' placeholder='Routing Number'>";
+                        output += "<div class='bankInfo'>";
+                        output += "<input type='text' id='accountNum' class='spanText' placeholder='Account Number'>";
+                        output += "<input type='text' id='accountNumConfirm' class='spanText' placeholder='Confirm Account Number'>";
+                        output += "</div>";
+                        output += "<select id='accountType'>" +
+                            "<option value='' disabled selected>Account Type</option>" +
+                            "<option value='savings'>Savings</option>" +
+                            "<option value='Checking'>Checking</option>" +
+                            "</select>";
+
+
+
+
+
+                    } else if ($(this).val() === "Venmo") {
+
+                    }
+
+                    $(".method").html(output);
+
                 });
             });
 

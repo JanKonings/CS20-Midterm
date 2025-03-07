@@ -26,7 +26,8 @@
     display: block;
     width: 60%;
     background-color: aliceblue;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 5px;
     margin: 0;
     margin-top: 50px;
     border: 1px solid #2c3e50;
@@ -92,6 +93,7 @@ button#singleTime.active {
     color: #ffffff;
     text-align: center; 
     border-radius: 5px;
+    border: 1px solid #2c3e50;
 }
 
 .customRadio:checked + label {
@@ -105,7 +107,6 @@ button#singleTime.active {
     height: 40px;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #2c3e50;
     border-radius: 5px;
     margin-bottom: 30px;
 }
@@ -116,7 +117,7 @@ button#singleTime.active {
     box-sizing: border-box;
 }
 
-#customAmount {
+.spanText {
     width: 100%;   
     height: 40px; 
     border-radius: 5px;
@@ -147,4 +148,76 @@ h3 {
 .infoElement {
     width: 100%;
     margin: 0;
+}
+
+.creditCardInfo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#paymentMethod {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.method {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.method h3 {
+    font-size: 17px;
+}
+
+.cardInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* First two columns are a quarter each, third column is half */
+    grid-template-rows: auto auto; /* Adjusts row heights dynamically */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.cardInfo select {
+    height: 40px;
+    border-radius: 5px;
+}
+
+.bankInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* First two columns are a quarter each, third column is half */
+    grid-template-rows: auto auto; /* Adjusts row heights dynamically */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    gap: 10px;
+}
+
+#accountType {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.submitButton {
+    display: flex;
+    margin-top: 20px;
+}
+
+.submitButton #submit {
+    width: 20%;   
+    height: 40px; 
+    border-radius: 5px;
+    border: 1px solid #2c3e50;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 10px;
 }
