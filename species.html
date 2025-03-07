@@ -46,7 +46,9 @@
         <button type="button" id="filter">Filter Results</button>
     </div>
 
-    <div class="output"></div>
+    <div class="output">
+
+    </div>
 
     <script>
         // waiting for document to load before running script
@@ -61,31 +63,34 @@
                 $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
                     // If the chosen filter is all, every product should be added
                     if (categoryFilter === "all") {
-                        console.log(animals);
                         for (var animal in animals) {
                             animals[animal].forEach(function(species) {
+                                output += "<div class='species'>";
+                                output += "<h3>Name: " + species.name + "</h3>";
+                                output += "<p>Scientific Name: " + species.scientificName + "</p>";
+                                output += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
+                                output += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
+                                output += "</div>";
+                            });
+                        }
+                        $(".output").html(output); 
+                    // if the category is not "all", then if the categories tag of 
+                    // the JSON includes a category that matches the chosen category
+                    // we also include the content
+                    } else if (animals[categoryFilter]) {
+                        animals[categoryFilter].forEach(function(species) {
                             output += "<div class='species'>";
-                            output += "<p>Name: " + species.name + "</p>";
+                            output += "<h3>Name: " + species.name + "</h3>";
                             output += "<p>Scientific Name: " + species.scientificName + "</p>";
                             output += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
                             output += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
                             output += "</div>";
                         });
 
-                        console.log(output);
-                    }
-                            
-
-                    // if the category is not "all", then if the categories tag of 
-                    // the JSON includes a category that matches the chosen category
-                    // we also include the content
-                    } else if (animals[categoryFilter]) {
-                        
+                        $(".output").html(output); 
                     }
                    
                 });
-                console.log(output);
-                $(".output").html(output); 
             });
         });
     </script>
