@@ -74,6 +74,9 @@ button:hover {
 }
 
 .species {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     box-sizing: border-box;
     padding: 20px;
     width: 100%;
@@ -82,10 +85,24 @@ button:hover {
     background-color: #b0c4e9;
 }
 
+.specieInfo {
+    width: 50%;
+    height: 100%;
+}
+
 h3 {
     font-size: 23px;
 }
 
 p {
     font-size: 18px;
+}
+
+img {
+    width: 100%; /* Image will take the full width of the second column */
+    max-width: 500px; /* Limit max width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+    border: 2px solid #1f65ab;
+    border-radius: 5px;
 }
