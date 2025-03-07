@@ -60,7 +60,9 @@
                 $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
                     // If the chosen filter is all, every product should be added
                     if (categoryFilter === "all") {
+                        console.log(animals);
                         animals.forEach(function(animal) {
+                            console.log(animal);
                             animal.forEach(function(species) {
                                 output += "<div class='species'>"
                                 output += species.name;
