@@ -1,103 +1,102 @@
 {
     "turtles": [
         {
-        "name": "Loggerhead Sea Turtle",
-        "scientific_name": "Caretta caretta",
-        "reason_for_endangerment": "Habitat loss, poaching, climate change.",
-        "role_in_ecosystem": "Maintain healthy seagrass beds and coral reefs."
+            "name": "Loggerhead Sea Turtle",
+            "scientificName": "Caretta caretta",
+            "reasonForEndangerment": "Habitat loss, poaching, climate change.",
+            "roleInEcosystem": "Maintain healthy seagrass beds and coral reefs."
         },
         {
-        "name": "Green Sea Turtle",
-        "scientific_name": "Chelonia mydas",
-        "reason_for_endangerment": "Overexploitation, habitat loss, climate change.",
-        "role_in_ecosystem": "Help maintain seagrass ecosystems by grazing."
+            "name": "Green Sea Turtle",
+            "scientificName": "Chelonia mydas",
+            "reasonForEndangerment": "Overexploitation, habitat loss, climate change.",
+            "roleInEcosystem": "Help maintain seagrass ecosystems by grazing."
         },
         {
-        "name": "Leatherback Sea Turtle",
-        "scientific_name": "Dermochelys coriacea",
-        "reason_for_endangerment": "Entanglement in fishing gear, climate change.",
-        "role_in_ecosystem": "Regulate jellyfish populations."
+            "name": "Leatherback Sea Turtle",
+            "scientificName": "Dermochelys coriacea",
+            "reasonForEndangerment": "Entanglement in fishing gear, climate change.",
+            "roleInEcosystem": "Regulate jellyfish populations."
         }
     ],
     "sharks": [
         {
-        "name": "Great White Shark",
-        "scientific_name": "Carcharodon carcharias",
-        "reason_for_endangerment": "Overfishing, habitat degradation.",
-        "role_in_ecosystem": "Apex predator, regulates populations of fish and marine mammals."
+            "name": "Great White Shark",
+            "scientificName": "Carcharodon carcharias",
+            "reasonForEndangerment": "Overfishing, habitat degradation.",
+            "roleInEcosystem": "Apex predator, regulates populations of fish and marine mammals."
         },
         {
-        "name": "Whale Shark",
-        "scientific_name": "Rhincodon typus",
-        "reason_for_endangerment": "Bycatch, ship strikes, overfishing.",
-        "role_in_ecosystem": "Helps maintain balance in plankton populations."
+            "name": "Whale Shark",
+            "scientificName": "Rhincodon typus",
+            "reasonForEndangerment": "Bycatch, ship strikes, overfishing.",
+            "roleInEcosystem": "Helps maintain balance in plankton populations."
         },
         {
-        "name": "Hammerhead Shark",
-        "scientific_name": "Sphyrna mokarran",
-        "reason_for_endangerment": "Fishing, habitat loss.",
-        "role_in_ecosystem": "Regulates fish populations and prevents overgrazing of coral reefs."
+            "name": "Hammerhead Shark",
+            "scientificName": "Sphyrna mokarran",
+            "reasonForEndangerment": "Fishing, habitat loss.",
+            "roleInEcosystem": "Regulates fish populations and prevents overgrazing of coral reefs."
         }
     ],
     "whales": [
         {
-        "name": "Blue Whale",
-        "scientific_name": "Balaenoptera musculus",
-        "reason_for_endangerment": "Commercial whaling, ship strikes.",
-        "role_in_ecosystem": "Helps maintain healthy plankton populations and nutrient cycles."
+            "name": "Blue Whale",
+            "scientificName": "Balaenoptera musculus",
+            "reasonForEndangerment": "Commercial whaling, ship strikes.",
+            "roleInEcosystem": "Helps maintain healthy plankton populations and nutrient cycles."
         },
         {
-        "name": "Humpback Whale",
-        "scientific_name": "Megaptera novaeangliae",
-        "reason_for_endangerment": "Whaling, entanglement in fishing gear.",
-        "role_in_ecosystem": "Aids nutrient cycling by feeding and releasing nutrients in deeper waters."
+            "name": "Humpback Whale",
+            "scientificName": "Megaptera novaeangliae",
+            "reasonForEndangerment": "Whaling, entanglement in fishing gear.",
+            "roleInEcosystem": "Aids nutrient cycling by feeding and releasing nutrients in deeper waters."
         },
         {
-        "name": "Orca",
-        "scientific_name": "Orcinus orca",
-        "reason_for_endangerment": "Pollution, prey depletion.",
-        "role_in_ecosystem": "Top predator, regulates populations of marine animals."
+            "name": "Orca",
+            "scientificName": "Orcinus orca",
+            "reasonForEndangerment": "Pollution, prey depletion.",
+            "roleInEcosystem": "Top predator, regulates populations of marine animals."
         }
     ],
     "seals": [
         {
-        "name": "Harp Seal",
-        "scientific_name": "Pagophilus groenlandicus",
-        "reason_for_endangerment": "Climate change, habitat loss.",
-        "role_in_ecosystem": "Helps control fish populations and maintain balance in marine ecosystems."
+            "name": "Harp Seal",
+            "scientificName": "Pagophilus groenlandicus",
+            "reasonForEndangerment": "Climate change, habitat loss.",
+            "roleInEcosystem": "Helps control fish populations and maintain balance in marine ecosystems."
         },
         {
-        "name": "Sea Otter",
-        "scientific_name": "Enhydra lutris",
-        "reason_for_endangerment": "Oil spills, hunting, habitat loss.",
-        "role_in_ecosystem": "Regulates sea urchin populations, helping kelp forests thrive."
+            "name": "Sea Otter",
+            "scientificName": "Enhydra lutris",
+            "reasonForEndangerment": "Oil spills, hunting, habitat loss.",
+            "roleInEcosystem": "Regulates sea urchin populations, helping kelp forests thrive."
         },
         {
-        "name": "Weddell Seal",
-        "scientific_name": "Leptonychotes weddellii",
-        "reason_for_endangerment": "Climate change, ice habitat loss.",
-        "role_in_ecosystem": "Controls fish and squid populations in polar regions."
+            "name": "Weddell Seal",
+            "scientificName": "Leptonychotes weddellii",
+            "reasonForEndangerment": "Climate change, ice habitat loss.",
+            "roleInEcosystem": "Controls fish and squid populations in polar regions."
         }
     ],
     "fish": [
         {
-        "name": "Atlantic Bluefin Tuna",
-        "scientific_name": "Thunnus thynnus",
-        "reason_for_endangerment": "Overfishing, illegal fishing.",
-        "role_in_ecosystem": "Top predator in marine food webs, controls prey populations."
+            "name": "Atlantic Bluefin Tuna",
+            "scientificName": "Thunnus thynnus",
+            "reasonForEndangerment": "Overfishing, illegal fishing.",
+            "roleInEcosystem": "Top predator in marine food webs, controls prey populations."
         },
         {
-        "name": "Napoleon Wrasse",
-        "scientific_name": "Cheilinus undulatus",
-        "reason_for_endangerment": "Overfishing, coral reef destruction.",
-        "role_in_ecosystem": "Helps control the populations of smaller fish and invertebrates."
+            "name": "Napoleon Wrasse",
+            "scientificName": "Cheilinus undulatus",
+            "reasonForEndangerment": "Overfishing, coral reef destruction.",
+            "roleInEcosystem": "Helps control the populations of smaller fish and invertebrates."
         },
         {
-        "name": "Clownfish",
-        "scientific_name": "Amphiprioninae",
-        "reason_for_endangerment": "Habitat loss due to coral reef destruction.",
-        "role_in_ecosystem": "Helps maintain coral health by cleaning anemones."
+            "name": "Clownfish",
+            "scientificName": "Amphiprioninae",
+            "reasonForEndangerment": "Habitat loss due to coral reef destruction.",
+            "roleInEcosystem": "Helps maintain coral health by cleaning anemones."
         }
     ]
 }
-  
