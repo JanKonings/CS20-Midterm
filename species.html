@@ -45,6 +45,8 @@
         <button type="button" id="filter">Filter Results</button>
     </div>
 
+    <div class="output"></div>
+
     <script>
         // waiting for document to load before running script
         $(document).ready(function() {
@@ -58,7 +60,17 @@
                 $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
                     // If the chosen filter is all, every product should be added
                     if (categoryFilter === "all") {
-                        
+                        animals.forEach(function(animal) {
+                            animal.forEach(function(species) {
+                                output += "<div class='species'>"
+                                output += species.name;
+                                output += species.scientificName;
+                                output += species.reasonForEndagerment;
+                                output += species.roleInEcosystem;
+                                output += "</div>";
+                            })
+                        });
+                            
 
                     // if the category is not "all", then if the categories tag of 
                     // the JSON includes a category that matches the chosen category
