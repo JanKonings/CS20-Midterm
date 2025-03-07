@@ -45,6 +45,32 @@
         <button type="button" id="filter">Filter Results</button>
     </div>
 
+    <script>
+        // waiting for document to load before running script
+        $(document).ready(function() {
+            // making a click fucntion for the filter button
+            $("#filter").click(function() {
+                // creating blank string to hold the output content
+                var output = "";
+                // collect the chosen category for the dop down menu
+                var categoryFilter = $("#Categories").val();
+                // get the JSON file and run function
+                $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
+                    // If the chosen filter is all, every product should be added
+                    if (categoryFilter === "all") {
+                        
+
+                    // if the category is not "all", then if the categories tag of 
+                    // the JSON includes a category that matches the chosen category
+                    // we also include the content
+                    } else if (animals[categoryFilter]) {
+                        
+                    }
+                   
+                });
+            });
+        });
+    </script>
 
     
 
