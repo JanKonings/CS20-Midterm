@@ -62,17 +62,16 @@
                     // If the chosen filter is all, every product should be added
                     if (categoryFilter === "all") {
                         console.log(animals);
-                        animals.forEach(function(animal) {
-                            console.log(animal);
-                            animal.forEach(function(species) {
-                                output += "<div class='species'>"
-                                output += species.name;
-                                output += species.scientificName;
-                                output += species.reasonForEndagerment;
-                                output += species.roleInEcosystem;
-                                output += "</div>";
-                            })
+                        for (var animal in animals) {
+                            animals[animal].forEach(function(species) {
+                            output += "<div class='species'>";
+                            output += "<p>Name: " + species.name + "</p>";
+                            output += "<p>Scientific Name: " + species.scientificName + "</p>";
+                            output += "<p>Reason for Endangerment: " + species.reasonForEndangerment + "</p>";
+                            output += "<p>Role in Ecosystem: " + species.roleInEcosystem + "</p>";
+                            output += "</div>";
                         });
+                    }
                             
 
                     // if the category is not "all", then if the categories tag of 
