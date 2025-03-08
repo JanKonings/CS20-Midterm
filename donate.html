@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html> 
 <head>
-<title>Ocean Aid</title>
+    <title>Ocean Aid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="header.CSS">
     <link rel="stylesheet" href="donate.CSS">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <style type = "text/css">
@@ -49,7 +50,7 @@
             <div class="personalInfo">
                 <div class="infoElement">
                     <h3>First Name</h3>
-                    <input type="text" id="name" class="nameForm">
+                    <input type="text" id="first" class="nameForm">
                 </div>
                 
                 <div class="infoElement">
@@ -80,6 +81,7 @@
             </div>
             
             <div class="submitButton">
+                <div class="errors"></div>
                 <button type="submit" id="submit"> Submit</button>
             </div>
         </form>
@@ -154,11 +156,6 @@
                             "<option value='savings'>Savings</option>" +
                             "<option value='Checking'>Checking</option>" +
                             "</select>";
-
-
-
-
-
                     } else if ($(this).val() === "Venmo") {
 
                     }
@@ -166,7 +163,79 @@
                     $(".method").html(output);
 
                 });
+
+                $("#submit").click(function(event) {
+                    if (!validateForm()) {
+                        event.preventDefault();
+                    }
+                });
             });
+
+            function validateForm() {
+                $(".errors").text(""); // Clear previous errors
+
+                if (!$("#monthly").hasClass("active") && !$("#singleTime").hasClass("active")) {
+                    $(".errors").text("Please select a donation type (One-Time or Monthly).");
+                    return false;
+                }
+
+                if (!$("input[name='donationAmount']:checked").val() && $("#customAmount").val() === "") {
+                    $(".errors").text("Please select or enter a donation amount.");
+                    return false;
+                }
+
+                if ($("#first").val() === "") {
+                    $(".errors").text("Please enter your first name.");
+                    return false;
+                } else if ($("#last").val() === "") {
+                    $(".errors").text("Please enter your last name.");
+                    return false;
+                } else if ($("#email").val() === "") {
+                    $(".errors").text("Please enter your email address.");
+                    return false;
+                } else if ($("#phone").val() === "") {
+                    $(".errors").text("Please enter your phone number.");
+                    return false;
+                }
+
+                if ($("#paymentMethod").val() === null) {
+                    $(".errors").text("Please select a payment method.");
+                    return false;
+                } else if ($("#paymentMethod").val() === "Credit") {
+                    if ($("#cardNum").val() === "") {
+                        $(".errors").text("Please enter your card number.");
+                        return false;
+                    } else if ($("#monthSelect").val() === null) {
+                        $(".errors").text("Please select the expiration month.");
+                        return false;
+                    } else if ($("#yearSelect").val() === null) {
+                        $(".errors").text("Please select the expiration year.");
+                        return false;
+                    } else if ($("#CVV").val() === "") {
+                        $(".errors").text("Please enter your CVV.");
+                        return false;
+                    }
+                } else if ($("#paymentMethod").val() === "Bank") {
+                    if ($("#routingNum").val() === "") {
+                        $(".errors").text("Please enter your routing number.");
+                        return false;
+                    } else if ($("#accountNum").val() === "") {
+                        $(".errors").text("Please enter your account number.");
+                        return false;
+                    } else if ($("#accountNumConfirm").val() === "") {
+                        $(".errors").text("Please confirm your account number.");
+                        return false;
+                    } else if ($("#accountNum").val() !== $("#accountNumConfirm").val()) {
+                        $(".errors").text("Account numbers do not match.");
+                        return false;
+                    } else if ($("#accountType").val() === null) {
+                        $(".errors").text("Please select your account type.");
+                        return false;
+                    }
+                }
+
+                return true;
+            }
 
         </script>
     </div>
