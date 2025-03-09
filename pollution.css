@@ -1,16 +1,34 @@
-.images {
+/* .images {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
     width: 100%;
     height: 500px;
+} */
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-panel {
+    width: 100%;
+}
+
+.right-panel {
+    width: 100%;
+}
+
+.description {
+    margin-top: 20px;
 }
 
 .images img {
+    margin-top: 50px;
     border-radius: 10px;
-    width: 700px;
-    height: 500px;
+    width: 95%;
+    height: 560px;
 }
 
 body{

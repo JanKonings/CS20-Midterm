@@ -24,19 +24,29 @@
         </div>
     </div>
 
-    <div class="radio-buttons">
-        <input type="radio" id="ocean" name="pollution" value="ocean">
-        <label for="ocean">Ocean</label><br>
-        <input type="radio" id="rivers" name="pollution" value="rivers">
-        <label for="rivers">Rivers</label><br>
-        <input type="radio" id="GPGP" name="pollution" value="GPGP">
-        <label for="GPGP">The GPGP</label><br>
-        <input type="radio" id="plastic" name="pollution" value="plastic">
-        <label for="plastic">Plastic</label>
-    </div>
-
-    <div class = "images">
-        <img src = "" alt = "">
+    <div class="content">
+        <div class="left-panel">
+            <div class="radio-buttons">
+                <input type="radio" id="ocean" name="pollution" value="ocean">
+                <label for="ocean">Ocean</label><br>
+                <input type="radio" id="rivers" name="pollution" value="rivers">
+                <label for="rivers">Rivers</label><br>
+                <input type="radio" id="GPGP" name="pollution" value="GPGP">
+                <label for="GPGP">The GPGP</label><br>
+                <input type="radio" id="plastic" name="pollution" value="plastic">
+                <label for="plastic">Plastic</label>
+            </div>
+            <div class="description">
+                <p>
+                    
+                </p>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="images">
+                <img src="Images/ocean1.jpg" alt="images">
+            </div>
+        </div>
     </div>
 
     <script>
@@ -60,7 +70,7 @@
                 $('.images img').attr("src", imageUrls[currIndex]);
                 clicks = 2;
             });
-            
+
             function fadeImages(){
                 if(clicks % 2 == 0){
                     return;
@@ -83,9 +93,6 @@
             }
 
         });
-    
-        
-        
     </script>
 </body>
 </html>
