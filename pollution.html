@@ -37,8 +37,17 @@
                 <label for="plastic">Plastic</label>
             </div>
             <div class="description">
+                <h2> Ocean Pollution </h2>
                 <p>
-                    
+                    Pollution in the ocean is a major environmental issue that 
+                    affects marine life, ecosystems, and human health. It 
+                    includes a variety of pollutants such as plastic debris, 
+                    chemicals, oil spills, and agricultural runoff. 
+                    These pollutants can harm marine animals, disrupt food 
+                    chains, and degrade habitats. Efforts to reduce ocean 
+                    pollution involve reducing plastic use, improving waste 
+                    management, and enforcing regulations to prevent 
+                    contaminants from entering the ocean.
                 </p>
             </div>
         </div>
@@ -59,14 +68,21 @@
             $('input[type=radio][name=pollution]').change(function() {
                 if (this.value === 'ocean') {
                     imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
+                    $('.description h2').html("Ocean Pollution");
+                    $('.description p').html("Pollution in the ocean is a major environmental issue that affects marine life, ecosystems, and human health. It includes a variety of pollutants such as plastic debris, chemicals, oil spills, and agricultural runoff. These pollutants can harm marine animals, disrupt food chains, and degrade habitats. Efforts to reduce ocean pollution involve reducing plastic use, improving waste management, and enforcing regulations to prevent contaminants from entering the ocean.");
                 } else if (this.value === 'rivers') {
                     imageUrls = ["Images/rivers1.jpg", "Images/rivers2.jpg"];
+                    $('.description h2').html("River Pollution");
+                    $('.description p').html("Rivers are vital sources of freshwater, but they are increasingly polluted by industrial waste, agricultural runoff, and plastic debris. This pollution can harm aquatic life, contaminate drinking water supplies, and disrupt ecosystems. Efforts to reduce river pollution include improving waste management practices, reducing the use of harmful chemicals, and promoting conservation initiatives.");
                 } else if (this.value === 'GPGP') {
                     imageUrls = ["Images/GPGP1.jpg", "Images/GPGP2.jpg"];
+                    $('.description h2').html("The Great Pacific Garbage Patch");
+                    $('.description p').html("The Great Pacific Garbage Patch (GPGP) is a massive area of marine debris accumulation in the North Pacific Ocean. It is primarily composed of plastic waste and other pollutants that have been carried by ocean currents. The GPGP poses a significant threat to marine life, as animals can ingest or become entangled in the debris. Efforts to address the GPGP include cleanup initiatives, reducing plastic production, and promoting sustainable waste management practices.");
                 } else if (this.value === 'plastic') {
                     imageUrls = ["Images/plastic1.jpg", "Images/plastic2.jpg"];
+                    $('.description h2').html("Plastic Pollution");
+                    $('.description p').html("Plastic pollution is one of the most pervasive environmental issues affecting the oceans today. Plastics can take hundreds of years to decompose, and during this time, they break down into smaller particles known as microplastics. These microplastics are ingested by marine animals, leading to physical harm, chemical contamination, and even death. Additionally, plastic debris can entangle marine life, damage coral reefs, and disrupt ecosystems. Reducing plastic pollution involves minimizing plastic use, improving recycling efforts, and supporting policies that limit plastic production and waste.");
                 }
-                currIndex = 0;
                 $('.images img').attr("src", imageUrls[currIndex]);
                 clicks = 2;
             });
@@ -89,7 +105,8 @@
 
             function startSlideshow(){
                 fadeImages();
-                setInterval(fadeImages, 2000);
+                clearInterval(interval);
+                interval = setInterval(fadeImages, 2000);
             }
 
         });
