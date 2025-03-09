@@ -15,23 +15,6 @@ h1 {
     font-size: 23px
 }
 
-@media (max-width: 768px) {
-    h1 {
-        color: transparent; 
-    }
-    h1::before {
-        content: "OA";
-        color: #f7faff;
-    }
-
-}
-
-@media (min-width: 1600px) {
-    h1 {
-        font-size: 36px; 
-    }
-}
-
 .navbar {
     top: 0;
     left: 0;
@@ -82,11 +65,64 @@ h1 {
 
 .nav-links a#donate-link:hover {
     background-color: #ffffff;
-    color: #000000;
 }
 
 
 .nav-links a:hover {
     color: hsl(0, 0%, 100%);
 }
+
+#hamburger {
+    padding: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 50px;
+    font-size: 40px;
+    color: #2c3e50;
+    background-color: #b0c4e9;
+}
+
+#hamburger:hover {
+    background-color: #ffffff;
+}
+
+.hamburgerMenu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 900px) {
+    .nav-links a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 730px) {
+    #hamburger {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: none;
+    }
+
+    #donate-link {
+        display: block;
+    }
+}
+
+/* @media (max-width: 500px) {
+    h1 {
+        color: transparent; 
+    }
+
+    h1::before {
+        content: "OA";
+        color: #f7faff;
+    }
+
+} */
 
