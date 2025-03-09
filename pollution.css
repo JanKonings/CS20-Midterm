@@ -1,13 +1,13 @@
 .images{
     text-align: center;
-    margin-top: 75px;
+    margin-top: 30px;
     vertical-align: middle;
 }
 
 .images img{
     border-radius: 10px;
-    width:auto;
-    height: auto;
+    width: 600px;
+    height: 500px;
 }
 
 body{

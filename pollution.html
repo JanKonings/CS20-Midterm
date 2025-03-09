@@ -36,20 +36,30 @@
     </div>
 
     <div class = "images">
-        <img src = "images/pollution1.jpg" alt = "pollution1">
+        <img src = "" alt = "">
     </div>
 
     <script>
         $(document).ready(function(){
-            var imageUrls = [
-                "Images/pollution1.jpg",
-                "Images/pollution2.jpg"
-            ];
-
+            var imageUrls = [];
             var currIndex = 0;
             var interval;
             var clicks = 0;
 
+            $('input[type=radio][name=pollution]').change(function() {
+                if (this.value === 'ocean') {
+                    imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
+                } else if (this.value === 'rivers') {
+                    imageUrls = ["Images/rivers1.jpg", "Images/rivers2.jpg"];
+                } else if (this.value === 'GPGP') {
+                    imageUrls = ["Images/GPGP1.jpg", "Images/GPGP2.jpg"];
+                } else if (this.value === 'plastic') {
+                    imageUrls = ["Images/plastic1.jpg", "Images/plastic2.jpg"];
+                }
+                currIndex = 0;
+                $('.images img').attr("src", imageUrls[currIndex]);
+                clicks = 2;
+            });
             
             function fadeImages(){
                 if(clicks % 2 == 0){
