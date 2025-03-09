@@ -20,6 +20,7 @@
     color: #2c3e50;
     font-size: 16px;
     margin: 0;
+    text-align: center;
 }
 
 .filterSpecies {
@@ -27,7 +28,6 @@
     align-items: center;  
     justify-content: center;  
     width: 100%;
-    height: 50px;
     background-color: #b0c4e9;
     padding: 10px;
     gap: 20px;
@@ -79,17 +79,18 @@ button:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    padding: 20px;
     width: 100%;
+    padding: 20px;
     border: 1px solid #2c3e50;
     border-radius: 5px;
     background-color: #b0c4e9;
 }
 
 .specieInfo {
-    width: 60%;
-    height: 100%;
+    padding: 10px;
+    padding-right: 20px;
 }
 
 h3 {
@@ -100,11 +101,62 @@ p {
     font-size: 18px;
 }
 
+
+
 .species img {
     width: 100%; /* Image will take the full width of the second column */
-    max-width: 500px; /* Limit max width */
+    max-width: 600px; /* Limit max width */
     height: auto; 
     margin: 0 auto; /* Center the image horizontally */
     border: 2px solid #1f65ab;
     border-radius: 5px;
 }
+
+@media (max-width: 1000px) {
+    .species img {
+        max-width: 400px;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .species {
+        flex-direction: column;
+        padding-top: 5px;
+    }
+    
+    .specieInfo {
+        padding-top: 0;
+        margin: 0 auto;
+    }
+
+    .species img {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 650px) {
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 540px) {
+    .specieInfo {
+        margin-left: 0;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+}
+

@@ -22,6 +22,20 @@
     text-align: center;
 }
 
+@media (max-width: 900px) {
+    .donate p {
+        width: 600px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 680px) {
+    .donate p {
+        width: 400px;
+        font-size: 14px;
+    }
+}
+
 .donate #donateForm {
     display: block;
     width: 60%;
@@ -134,7 +148,12 @@ h3 {
     font-size: 18px;
     color: #2c3e50;
     margin: 0;
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+@media (max-width: 900px) {
+    h3 {
+        font-size: 15px;
+    }
 }
 
 
@@ -174,9 +193,17 @@ h3 {
     margin-top: 20px;
 }
 
+
 .method h3 {
     font-size: 17px;
 }
+
+@media (max-width: 900px) {
+    .method h3 {
+        font-size: 14px;
+    }
+}
+
 
 .cardInfo {
     display: grid;
@@ -198,7 +225,7 @@ h3 {
 
 .bankInfo {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* First two columns are a quarter each, third column is half */
+    grid-template-columns: 1fr 1fr; 
     grid-template-rows: auto auto; /* Adjusts row heights dynamically */
     width: 100%;
     max-width: 100%;
@@ -232,10 +259,15 @@ h3 {
 
 .errors {
     display: flex;
-    text-align: center;
     width: 100%;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 18px;
     color: #de2b2b;
     padding: 5px;
+}
+
+@media (max-width: 900px) {
+    .errors {
+        font-size: 15px;
+    }
 }
