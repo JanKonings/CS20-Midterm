@@ -89,9 +89,17 @@ h1 {
 }
 
 .hamburgerMenu {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: none;
+    padding: 20px;
+}
+
+.hamburgerMenu a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hamburgerMenu a {
+    text-decoration: none;
 }
 
 @media (max-width: 900px) {

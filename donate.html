@@ -3,8 +3,8 @@
 <head>
     <title>Ocean Aid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="header.CSS">
-    <link rel="stylesheet" href="donate.CSS">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="donate.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
@@ -25,14 +25,22 @@
             <button type="button" id="hamburger">≡</button>
         </div>
     </div>
-    
-    <div class="HamburgerMenu">
+
+    <div class="hamburgerMenu">
         <a id="aboutUs" href="aboutUs.html">About Us</a>
         <a id="species" href="species.html">Species</a>
         <a id="pollution" href="pollution.html">Pollution</a>
         <a id="getInvolved" href="getInvolved.html">Get Involved</a>
         <a id="contact" href="contact.html">Contact</a>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#hamburger").click(function() {
+                $(".hamburgerMenu").slideToggle();
+            });
+        })
+    </script>
 
     <div class="donate">
         <h2>The ocean depends on you!</h2>
