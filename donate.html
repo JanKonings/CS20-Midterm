@@ -186,7 +186,23 @@
                 $("#submitBtn").click(function(event) {
                     if (!validateForm()) {
                         event.preventDefault();
+                    } else {
+                        alert("Every donation goes a long way, we thank you for your contribution to OceanAid's misson!");
                     }
+                });
+
+                $(document).on("click", "input, select, button[type='button']", function() {
+                    $(".errors").html("");
+                });
+
+                $("#customAmount").on("input", function() {
+                    document.querySelectorAll("input[name='donationAmount']").forEach(function(el) {
+                        el.checked = false;
+                    });
+                });
+
+                $(".customRadio").click(function() {
+                    $("#customAmount").val("");
                 });
             });
 
