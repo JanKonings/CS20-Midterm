@@ -120,7 +120,7 @@ h1 {
     }
 
     #donate-link {
-        display: block;
+        display: flex;
     }
 }
 
