@@ -99,7 +99,7 @@
             
             <div class="submitButton">
                 <div class="errors"></div>
-                <button type="submit" id="submit"> Submit</button>
+                <button type="submit" id="submitBtn"> Submit</button>
             </div>
         </form>
 
@@ -181,7 +181,7 @@
 
                 });
 
-                $("#submit").click(function(event) {
+                $("#submitBtn").click(function(event) {
                     if (!validateForm()) {
                         event.preventDefault();
                     }
