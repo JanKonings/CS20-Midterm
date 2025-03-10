@@ -37,6 +37,12 @@
             $("#hamburger").click(function() {
                 $(".hamburgerMenu").slideToggle("fast");
             });
+
+            $(window).resize(function() {
+                if ($(window).width() > 730) {
+                    $(".hamburgerMenu").hide();
+                }
+            });
         })
     </script>
 
