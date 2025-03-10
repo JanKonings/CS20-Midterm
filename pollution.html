@@ -63,17 +63,8 @@
                 </li>
                 <li>
                     <div class="description">
-                        <h2> Ocean Pollution </h2>
+                        <h2></h2>
                         <p>
-                            Pollution in the ocean is a major environmental issue that 
-                            affects marine life, ecosystems, and human health. It 
-                            includes a variety of pollutants such as plastic debris, 
-                            chemicals, oil spills, and agricultural runoff. 
-                            These pollutants can harm marine animals, disrupt food 
-                            chains, and degrade habitats. Efforts to reduce ocean 
-                            pollution involve reducing plastic use, improving waste 
-                            management, and enforcing regulations to prevent 
-                            contaminants from entering the ocean.
                         </p>
                     </div>
                 </li>
@@ -92,7 +83,7 @@
             var currIndex = 0;
             var interval;
             var clicks = 0;
-
+            startSlideshow();
             $('input[type=radio][name=pollution]').change(function() {
                 if (this.value === 'ocean') {
                     imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
@@ -112,11 +103,10 @@
                     $('.description p').html("Plastic pollution is one of the most pervasive environmental issues affecting the oceans today. Plastics can take hundreds of years to decompose, and during this time, they break down into smaller particles known as microplastics. These microplastics are ingested by marine animals, leading to physical harm, chemical contamination, and even death. Additionally, plastic debris can entangle marine life, damage coral reefs, and disrupt ecosystems. Reducing plastic pollution involves minimizing plastic use, improving recycling efforts, and supporting policies that limit plastic production and waste.");
                 }
                 $('.images img').attr("src", imageUrls[currIndex]);
-                clicks = 2;
             });
 
             function fadeImages(){
-                if(clicks % 2 == 0){
+                if(clicks % 2 != 0){
                     return;
                 }
                 $(".images img").fadeOut(1000, function() {
@@ -128,10 +118,13 @@
 
             $(".images img").on("click", function() {
                 clicks++;
-                startSlideshow();
             });
 
             function startSlideshow(){
+                $('#ocean').prop('checked', true);
+                $('.description h2').html("Ocean Pollution");
+                $('.description p').html("Pollution in the ocean is a major environmental issue that affects marine life, ecosystems, and human health. It includes a variety of pollutants such as plastic debris, chemicals, oil spills, and agricultural runoff. These pollutants can harm marine animals, disrupt food chains, and degrade habitats. Efforts to reduce ocean pollution involve reducing plastic use, improving waste management, and enforcing regulations to prevent contaminants from entering the ocean.");
+                imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
                 fadeImages();
                 clearInterval(interval);
                 interval = setInterval(fadeImages, 2000);
