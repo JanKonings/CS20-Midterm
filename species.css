@@ -63,17 +63,16 @@ select:hover {
     cursor: pointer;
 }
 
-button {
+#filter {
     height: 40px;
     width: 100px;
-    color: #2c3e50;
     border: 1px solid #2c3e50;
     background-color: #2c3e50;
     color: #ffffff;
     border-radius: 5px;
 }
 
-button:hover {
+#filter:hover {
     cursor: pointer;
     background-color: #ffffff;
     color: #2c3e50;
@@ -106,6 +105,7 @@ button:hover {
 .specieInfo {
     padding: 10px;
     padding-right: 20px;
+    width: 50%;
 }
 
 h3 {
@@ -143,6 +143,7 @@ p {
     .specieInfo {
         padding-top: 0;
         margin: 0 auto;
+        width: 100%;
     }
 
     .species img {

@@ -22,22 +22,30 @@
             <a id="getInvolved" href="getInvolved.html">Get Involved</a>
             <a id="contact" href="contact.html">Contact</a>
             <a id="donate-link" href="donate.html">Donate</a>
-            <button type="button" id="hamburger">≡</button>
+            <button type="button" id="hamburger">&equiv;</button>
         </div>
     </div>
 
     <div class="hamburgerMenu">
-        <a id="aboutUs" href="aboutUs.html">About Us</a>
-        <a id="species" href="species.html">Species</a>
-        <a id="pollution" href="pollution.html">Pollution</a>
-        <a id="getInvolved" href="getInvolved.html">Get Involved</a>
-        <a id="contact" href="contact.html">Contact</a>
+        <div class="navItems">
+            <a id="aboutUs" href="aboutUs.html">About Us</a>
+            <a id="species" href="species.html">Species</a>
+            <a id="pollution" href="pollution.html">Pollution</a>
+            <a id="getInvolved" href="getInvolved.html">Get Involved</a>
+            <a id="contact" href="contact.html">Contact</a>
+        </div>
     </div>
 
     <script>
         $(document).ready(function() {
             $("#hamburger").click(function() {
                 $(".hamburgerMenu").slideToggle("fast");
+            });
+
+            $(window).resize(function() {
+                if ($(window).width() > 730) {
+                    $(".hamburgerMenu").hide();
+                }
             });
         })
     </script>
@@ -99,7 +107,7 @@
             
             <div class="submitButton">
                 <div class="errors"></div>
-                <button type="submit" id="submit"> Submit</button>
+                <button type="submit" id="submitBtn"> Submit</button>
             </div>
         </form>
 
@@ -181,10 +189,26 @@
 
                 });
 
-                $("#submit").click(function(event) {
+                $("#submitBtn").click(function(event) {
                     if (!validateForm()) {
                         event.preventDefault();
+                    } else {
+                        alert("Every donation goes a long way, we thank you for your contribution to OceanAid's misson!");
                     }
+                });
+
+                $(document).on("click", "input, select, button[type='button']", function() {
+                    $(".errors").html("");
+                });
+
+                $("#customAmount").on("input", function() {
+                    document.querySelectorAll("input[name='donationAmount']").forEach(function(el) {
+                        el.checked = false;
+                    });
+                });
+
+                $(".customRadio").click(function() {
+                    $("#customAmount").val("");
                 });
             });
 
