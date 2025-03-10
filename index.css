@@ -30,3 +30,81 @@
     font-size: 30px;
     color: #2c3e50;
 }
+
+.issue {
+    display: flex;
+    width: 100%;
+}
+
+.problem, .solution {
+    flex: 1;
+    height: 300px;
+    text-align: center;
+    padding: 20px;
+}
+
+.solution {
+    background-color: rgb(176, 196, 233);
+    color: #2c3e50;
+}
+
+.problem {
+    background-color: #2c3e50;
+    color: rgb(176, 196, 233);
+}
+
+.issue h3 {
+    font-size: 30px;
+}
+
+.issue p {
+    font-size: 20px;
+}
+
+.help {
+    width: 100%;
+    padding: 50px;
+    background-image: url("Images/helpBackground.jpg");
+    background-size: cover;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.help h3 {
+    font-size: 30px;
+    background-color: #2c3e50;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 80%;
+}
+
+.help ul {
+    font-size: 20px;
+    background-color: #2c3e50;
+    padding: 20px;
+    padding-top: 50px;
+    list-style-position: inside;
+    border-radius: 10px;
+    opacity: 80%;
+    line-height: 2; /* Adjust the line height to control spacing */
+}
+
+.help ul li {
+    margin-bottom: 20px;
+}
+
+#helpOptions a.helpLinks {
+    background-color: #ffffff;
+    color: #2c3e50;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #2c3e50;
+    font-size: 15px;
+}
+
+#helpOptions .helpLinks:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
