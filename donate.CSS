@@ -30,12 +30,6 @@
     }
 }
 
-@media (max-width: 680px) {
-    .donate p {
-        width: 400px;
-        font-size: 14px;
-    }
-}
 
 .donate #donateForm {
     display: block;
@@ -57,28 +51,28 @@
 .buttonContainer button {
     flex: 1;
     height: 40px;
-    background-color: #2c3e50;
-    color: #f7faff;
+    background-color: #ffffff;
+    color: #2c3e50;
     font-size: 16px;
     border: 1px solid #2c3e50;
     border-radius: 5px;
 }
 
 .buttonContainer button:hover {
-    background-color: #ffffff;
+    background-color: #2c3e50;
     cursor: pointer;
-    color: #2c3e50;
+    color: #ffffff;
     border: 1px solid #2c3e50;
 }
 
 button#monthly.active { 
-    background-color: #f7faff;
-    color: #2c3e50;
+    background-color: #2c3e50;
+    color: #ffffff;
 }
 
 button#singleTime.active {
-    background-color: #f7faff;
-    color: #2c3e50;
+    background-color: #2c3e50;
+    color: #ffffff;
 } 
 
 .amount {
@@ -92,9 +86,9 @@ button#singleTime.active {
 }
 
 .customRadio + label:hover{
-    background-color: #ffffff;
+    background-color: #2c3e50;
     cursor: pointer;
-    color: #2c3e50;
+    color: #ffffff;
     border: 1px solid #2c3e50;
 }
 
@@ -104,18 +98,19 @@ button#singleTime.active {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     height: 40px;
+    font-size: 18px;
     margin: 10px 0 10px 0;
-    background-color: #2c3e50;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #2c3e50;
     text-align: center; 
     border-radius: 5px;
     border: 1px solid #2c3e50;
 }
 
 .customRadio:checked + label {
-    background-color: #f7faff;
-    color: #2c3e50;
-    border: 1px solid #2c3e50;
+    background-color: #2c3e50;
+    color: #ffffff;
+    border: 1px solid #ffffff;
 }
 
 .customRadio {
@@ -153,6 +148,10 @@ h3 {
 
 @media (max-width: 900px) {
     h3 {
+        font-size: 15px;
+    }
+
+    .customRadio + label{
         font-size: 15px;
     }
 }
@@ -282,3 +281,23 @@ h3 {
         font-size: 15px;
     }
 }
+
+@media (max-width: 680px) {
+    .donate p {
+        width: 400px;
+        font-size: 14px;
+    }
+
+    .customRadio + label{
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 580px) {
+    .customRadio + label{
+        font-size: 17px;
+    }
+
+}
+
