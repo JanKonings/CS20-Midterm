@@ -189,6 +189,72 @@
 
                 });
 
+                function validateForm() {
+                    $(".errors").text(""); // Clear previous errors
+
+                    if (!$("#monthly").hasClass("active") && !$("#singleTime").hasClass("active")) {
+                        $(".errors").text("Please select a donation type (One-Time or Monthly).");
+                        return false;
+                    }
+
+                    if (!$("input[name='donationAmount']:checked").val() && $("#customAmount").val() === "") {
+                        $(".errors").text("Please select or enter a donation amount.");
+                        return false;
+                    }
+
+                    if ($("#first").val() === "") {
+                        $(".errors").text("Please enter your first name.");
+                        return false;
+                    } else if ($("#last").val() === "") {
+                        $(".errors").text("Please enter your last name.");
+                        return false;
+                    } else if ($("#email").val() === "") {
+                        $(".errors").text("Please enter your email address.");
+                        return false;
+                    } else if ($("#phone").val() === "") {
+                        $(".errors").text("Please enter your phone number.");
+                        return false;
+                    }
+
+                    if ($("#paymentMethod").val() === null) {
+                        $(".errors").text("Please select a payment method.");
+                        return false;
+                    } else if ($("#paymentMethod").val() === "Credit") {
+                        if ($("#cardNum").val() === "") {
+                            $(".errors").text("Please enter your card number.");
+                            return false;
+                        } else if ($("#monthSelect").val() === null) {
+                            $(".errors").text("Please select the expiration month.");
+                            return false;
+                        } else if ($("#yearSelect").val() === null) {
+                            $(".errors").text("Please select the expiration year.");
+                            return false;
+                        } else if ($("#CVV").val() === "") {
+                            $(".errors").text("Please enter your CVV.");
+                            return false;
+                        }
+                    } else if ($("#paymentMethod").val() === "Bank") {
+                        if ($("#routingNum").val() === "") {
+                            $(".errors").text("Please enter your routing number.");
+                            return false;
+                        } else if ($("#accountNum").val() === "") {
+                            $(".errors").text("Please enter your account number.");
+                            return false;
+                        } else if ($("#accountNumConfirm").val() === "") {
+                            $(".errors").text("Please confirm your account number.");
+                            return false;
+                        } else if ($("#accountNum").val() !== $("#accountNumConfirm").val()) {
+                            $(".errors").text("Account numbers do not match.");
+                            return false;
+                        } else if ($("#accountType").val() === null) {
+                            $(".errors").text("Please select your account type.");
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+
                 $("#submitBtn").click(function(event) {
                     if (!validateForm()) {
                         event.preventDefault();
@@ -212,71 +278,7 @@
                 });
             });
 
-            function validateForm() {
-                $(".errors").text(""); // Clear previous errors
-
-                if (!$("#monthly").hasClass("active") && !$("#singleTime").hasClass("active")) {
-                    $(".errors").text("Please select a donation type (One-Time or Monthly).");
-                    return false;
-                }
-
-                if (!$("input[name='donationAmount']:checked").val() && $("#customAmount").val() === "") {
-                    $(".errors").text("Please select or enter a donation amount.");
-                    return false;
-                }
-
-                if ($("#first").val() === "") {
-                    $(".errors").text("Please enter your first name.");
-                    return false;
-                } else if ($("#last").val() === "") {
-                    $(".errors").text("Please enter your last name.");
-                    return false;
-                } else if ($("#email").val() === "") {
-                    $(".errors").text("Please enter your email address.");
-                    return false;
-                } else if ($("#phone").val() === "") {
-                    $(".errors").text("Please enter your phone number.");
-                    return false;
-                }
-
-                if ($("#paymentMethod").val() === null) {
-                    $(".errors").text("Please select a payment method.");
-                    return false;
-                } else if ($("#paymentMethod").val() === "Credit") {
-                    if ($("#cardNum").val() === "") {
-                        $(".errors").text("Please enter your card number.");
-                        return false;
-                    } else if ($("#monthSelect").val() === null) {
-                        $(".errors").text("Please select the expiration month.");
-                        return false;
-                    } else if ($("#yearSelect").val() === null) {
-                        $(".errors").text("Please select the expiration year.");
-                        return false;
-                    } else if ($("#CVV").val() === "") {
-                        $(".errors").text("Please enter your CVV.");
-                        return false;
-                    }
-                } else if ($("#paymentMethod").val() === "Bank") {
-                    if ($("#routingNum").val() === "") {
-                        $(".errors").text("Please enter your routing number.");
-                        return false;
-                    } else if ($("#accountNum").val() === "") {
-                        $(".errors").text("Please enter your account number.");
-                        return false;
-                    } else if ($("#accountNumConfirm").val() === "") {
-                        $(".errors").text("Please confirm your account number.");
-                        return false;
-                    } else if ($("#accountNum").val() !== $("#accountNumConfirm").val()) {
-                        $(".errors").text("Account numbers do not match.");
-                        return false;
-                    } else if ($("#accountType").val() === null) {
-                        $(".errors").text("Please select your account type.");
-                        return false;
-                    }
-                }
-
-                return true;
-            }
+            
 
         </script>
     </div>
