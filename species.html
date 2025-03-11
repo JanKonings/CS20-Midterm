@@ -47,8 +47,12 @@
         $(document).ready(function() {
             // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
+                // if the hamburger menu is already displayed, the hamburger button will change to X icon to anticipate the change
+                // of slidetoggle effect
                 if ($(".hamburgerMenu").css("display") === "block") {
                     $("#hamburger").html("&equiv;");
+                // if the hamburger menu is not displayed, the hamburger button will change to the hamburger icon to anticipate the change
+                // of slidetoggle effect
                 } else {
                     $("#hamburger").html("&times;");
                 }
@@ -65,6 +69,7 @@
                 // if the window is greater than 730px, the hamburger menu will hide
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
+                    // the hamburger button will change to the hamburger icon
                     $("#hamburger").html("&equiv;");
                 }
             });
