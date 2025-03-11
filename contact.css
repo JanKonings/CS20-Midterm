@@ -1,6 +1,7 @@
 body{
     background-image: url("Images/contactBackground.jpg");
     background-size: cover;
+    min-height: 100vh;
 }
 
 .form form {
@@ -53,6 +54,8 @@ body{
     font-size: 36px;
     margin-top: 30px;
     font-weight: normal;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 @media (max-width: 430px) {
