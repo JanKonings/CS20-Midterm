@@ -13,6 +13,7 @@
 ></script>
 </head>
 <body>
+    
     <div class="navbar">
         <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
         <h1><a href="index.html">OceanAid</a></h1>
@@ -52,24 +53,27 @@
         })
     </script>
 
-    <div class = "formContent">
-        <div class = "formDescription">
-            <h1>For questions or inquiries, please fill out this form</h1>
+    <div class="content">
+        <div class = "formContent">
+            <div class = "formDescription">
+                <h1>For questions or inquiries, please fill out this form</h1>
+            </div>
+            
+            <div class = "form">
+                <form id = "contactForm" method = "get" action = "#">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="phone">Phone Number:</label><br>
+                    <input type="phone" id="phone" name="phone"><br><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </div>
-        
-        <div class = "form">
-            <form id = "contactForm" method = "get" action = "#">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="phone">Phone Number:</label><br>
-                <input type="phone" id="phone" name="phone"><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
+
     </div>
 
     <div class="footer">
