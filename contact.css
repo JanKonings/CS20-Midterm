@@ -2,7 +2,7 @@ html, body{
     background-image: url("Images/contactBackground.jpg");
     background-size: cover;
     height: 120%;
-    margin: 0;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
 }
@@ -13,7 +13,7 @@ html, body{
 
 .form form {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
