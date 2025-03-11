@@ -11,6 +11,7 @@ body{
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f9f9f9;
+    height: 650px
 }
 
 .form label {
@@ -53,6 +54,8 @@ body{
     font-size: 36px;
     margin-top: 30px;
     font-weight: normal;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 @media (max-width: 430px) {
