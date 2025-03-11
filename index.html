@@ -4,6 +4,7 @@
     <title>Ocean Aid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="index.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 </head>
@@ -57,17 +58,78 @@
         </div>
     </div>
 
+    <div class="mission">
+        <img src="Images/hp1.jpg" id="missionImg">
+        <div class="missionStatement">
+            <h2>Protecting marine life and preserving our oceans by combating waste, restoring habitats, and inspiring global action.</h2>
+        </div>
+    </div>
+
+    <div class="issue">
+        <div class="problem">
+            <h3>The Problem</h3>
+            <p>Our oceans are in crisis. Every year, millions of tons of plastic waste, oil spills, and chemical pollutants enter marine ecosystems, endangering countless species. Overfishing and habitat destruction are pushing marine life to the brink of extinction. If we don’t act now, future generations may inherit an ocean that is lifeless and beyond repair.</p>
+        </div>
+        <div class="solution">
+            <h3>The Solution</h3>
+            <p>OceaAid is dedicated to protecting and restoring our oceans. Through conservation efforts, cleanup initiatives, and education, we empower communities to take action. We support sustainable practices, advocate for stronger environmental policies, and work with volunteers to remove waste from beaches and waterways. Together, we can ensure a healthier, thriving ocean for all.</p>
+        </div>
+    </div>
+
+    <div class="help">
+        <h3>How you can help</h3>
+        <ul id="helpOptions">
+            <li><a class="helpLinks" href="donate.html">Donate</a> - Support our conservation projects and cleanup initiatives.</li>
+            <li><b>Spread awareness:</b> Share our mission and educate others about ocean conservation.</li>
+            <li><b>Sustainable choices:</b> Reduce single-use plastics and choose eco-friendly products.</li>
+            <li>For more information on how to help, visit our <a class="helpLinks" href="getInvolved.html">Get Involved</a> page.</li>
+        </ul>
+    </div>
+
     <script>
         $(document).ready(function() {
             $("#hamburger").click(function() {
-                $(".hamburgerMenu").slideToggle("fast");
+            $(".hamburgerMenu").slideToggle("fast");
             });
 
             $(window).resize(function() {
-                if ($(window).width() > 730) {
-                    $(".hamburgerMenu").hide();
-                }
+            if ($(window).width() > 730) {
+                $(".hamburgerMenu").hide();
+            }
             });
+
+            let images = {
+                "img0": "Images/hp1.jpg",
+                "img1": "Images/hp2.jpg",
+                "img2": "Images/hp3.jpg"
+            };
+
+            let currIndex = 0;
+
+            function changeImage() {
+                $("#missionImg").fadeTo(2000, 0, function() {
+                    // Update indexes
+                    currIndex = (currIndex + 1) % 3;
+                    var nextIndex = (currIndex + 1) % 3;
+
+                    // Set the new mission image (the one after the background image)
+                    var nextSource = images["img" + (nextIndex)];
+                    $("#missionImg").attr("src", nextSource);
+
+                    // Fade in mission image
+                    $("#missionImg").fadeTo(2000, 1, function() {
+                        // update index to index after the new mission img
+                        var nextBackgroundIndex = (nextIndex + 1) % 3;
+                        var backgroundSource = images["img" + (nextIndex)];
+                        $(".mission").css("background-image", `url(${backgroundSource})`);
+
+                        changeImage(); // recursively call the function to create an infinite loop
+                    });
+                });
+            }
+
+            changeImage(); // original call to function to start loop
+
         })
     </script>
 </body>

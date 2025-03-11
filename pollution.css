@@ -11,11 +11,15 @@
     width: 100%;
 }
 
+ul li{
+    list-style-type: circle;
+}
+
 .description {
     margin-top: 20px;
+    margin-left: 20px;
     color:#2c3e50;
     width: 650px;
-    margin-left: 20px;
 }
 
 .images img {
@@ -53,4 +57,64 @@ body{
 .radio-buttons input[type="radio"]:checked + label {
     background-color: rgb(255, 255, 255);
     color: #2c3e50
+}
+
+@media (max-width: 1375px){
+    .left-panel{
+        width: 90%;
+    }
+    .description {
+        width: 500px;
+    }
+}
+
+@media(max-width: 1200px){
+    .left-panel{
+        width: 80%;
+    }
+    .description {
+        width: 400px;
+    }
+}
+
+@media(max-width: 1100px){
+    .left-panel{
+        width: 70%;
+    }
+    .description {
+        width: 350px;
+    }
+
+    .radio-buttons label {
+        padding: 5px 10px;
+    }
+}
+
+@media(max-width: 950px){
+    .radio-buttons label {
+        padding: 10px 20px;
+    }
+
+    .description {
+        margin-top: 20px;
+        margin-left: 20px;
+        color:#2c3e50;
+        width: 95%;
+    }
+
+    .content {
+        display: inline-block;
+        justify-content: space-between;
+    }
+
+    .left-panel{
+        width: 90%;
+        
+    }
+
+    .images{
+        box-sizing: border-box;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
 }

@@ -57,20 +57,15 @@
                 <label for="GPGP">The GPGP</label><br>
                 <input type="radio" id="plastic" name="pollution" value="plastic">
                 <label for="plastic">Plastic</label>
-            </div>
+            </div> 
             <div class="description">
-                <h2> Ocean Pollution </h2>
-                <p>
-                    Pollution in the ocean is a major environmental issue that 
-                    affects marine life, ecosystems, and human health. It 
-                    includes a variety of pollutants such as plastic debris, 
-                    chemicals, oil spills, and agricultural runoff. 
-                    These pollutants can harm marine animals, disrupt food 
-                    chains, and degrade habitats. Efforts to reduce ocean 
-                    pollution involve reducing plastic use, improving waste 
-                    management, and enforcing regulations to prevent 
-                    contaminants from entering the ocean.
+                <h2 id = "title"></h2>
+                <p id = "content1"></p>
+                <p id = "stats">
+                    <ul>
+                    </ul>
                 </p>
+                <p id = "content2"></p>
             </div>
         </div>
         <div class="right-panel">
@@ -86,31 +81,71 @@
             var currIndex = 0;
             var interval;
             var clicks = 0;
-
+            startSlideshow();
             $('input[type=radio][name=pollution]').change(function() {
                 if (this.value === 'ocean') {
                     imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
-                    $('.description h2').html("Ocean Pollution");
-                    $('.description p').html("Pollution in the ocean is a major environmental issue that affects marine life, ecosystems, and human health. It includes a variety of pollutants such as plastic debris, chemicals, oil spills, and agricultural runoff. These pollutants can harm marine animals, disrupt food chains, and degrade habitats. Efforts to reduce ocean pollution involve reducing plastic use, improving waste management, and enforcing regulations to prevent contaminants from entering the ocean.");
+                    $('#title').html("Ocean Pollution");
+                    $('#content1').html("Pollution in the ocean is a major environmental issue that affects marine life, ecosystems, and human health. It includes a variety of pollutants such as plastic debris, chemicals, oil spills, and agricultural runoff. These pollutants can harm marine animals, disrupt food chains, and degrade habitats. Ocean pollution also affects coastal communities, impacting tourism, fishing industries, and overall quality of life. Addressing ocean pollution requires global cooperation and sustainable practices to protect our oceans for future generations.");
+                    $('#stats').html(`
+                    <ul>
+                        <li>Every year, <b>millions of tons</b> of plastic waste end up in the ocean.</li>
+                        <li>By <b>2050</b>, there will be more plastic in the ocean than fish by weight.</li>
+                        <li>Over <b>100,000 marine animals</b> die each year due to plastic entanglement or ingestion.</li>
+                        <li>Ocean pollution includes plastic debris, chemicals, oil spills, and agricultural runoff.</li>
+                        <li>Pollutants harm marine animals, disrupt food chains, and degrade habitats.</li>
+                        <li>Efforts to reduce ocean pollution involve reducing plastic use, improving waste management, and enforcing regulations.</li>
+                    </ul>
+                    `);
+                    $('#content2').html("You can help reduce ocean pollution by participating in beach cleanups, reducing your use of single-use plastics, properly disposing of waste, supporting policies that protect the ocean, and spreading awareness about the issue.");
                 } else if (this.value === 'rivers') {
                     imageUrls = ["Images/rivers1.jpg", "Images/rivers2.jpg"];
-                    $('.description h2').html("River Pollution");
-                    $('.description p').html("Rivers are vital sources of freshwater, but they are increasingly polluted by industrial waste, agricultural runoff, and plastic debris. This pollution can harm aquatic life, contaminate drinking water supplies, and disrupt ecosystems. Efforts to reduce river pollution include improving waste management practices, reducing the use of harmful chemicals, and promoting conservation initiatives.");
+                    $('#title').html("River Pollution");
+                    $('#content1').html("Rivers are vital sources of freshwater, but they are increasingly polluted by industrial waste, agricultural runoff, and plastic debris. This pollution can harm aquatic life, contaminate drinking water supplies, and disrupt ecosystems. Pollutants such as heavy metals, pesticides, and microplastics can accumulate in the food chain, posing health risks to both wildlife and humans. Efforts to reduce river pollution include improving waste management practices, implementing stricter regulations on industrial discharges, and promoting sustainable agricultural practices.");
+                    $('#stats').html(`
+                    <ul>
+                        <li>Rivers carry an estimated <b>1.15 to 2.41 million tons</b> of plastic waste into the ocean each year.</li>
+                        <li><b>80%</b> of ocean plastic pollution originates from land-based sources, including rivers.</li>
+                        <li>Industrial waste and agricultural runoff are major contributors to river pollution.</li>
+                        <li>Polluted rivers can contaminate drinking water supplies for <b>millions</b> of people.</li>
+                        <li>Efforts to reduce river pollution include improving waste management and reducing harmful chemical use.</li>
+                    </ul>
+                    `);
+                    $('#content2').html("You can help reduce river pollution by properly disposing of waste, using environmentally friendly products, reducing the use of harmful chemicals, participating in river cleanups, and supporting policies that protect water quality.");
                 } else if (this.value === 'GPGP') {
                     imageUrls = ["Images/GPGP1.jpg", "Images/GPGP2.jpg"];
-                    $('.description h2').html("The Great Pacific Garbage Patch");
-                    $('.description p').html("The Great Pacific Garbage Patch (GPGP) is a massive area of marine debris accumulation in the North Pacific Ocean. It is primarily composed of plastic waste and other pollutants that have been carried by ocean currents. The GPGP poses a significant threat to marine life, as animals can ingest or become entangled in the debris. Efforts to address the GPGP include cleanup initiatives, reducing plastic production, and promoting sustainable waste management practices.");
+                    $('#title').html("The Great Pacific Garbage Patch");
+                    $('#content1').html("The Great Pacific Garbage Patch <b>(GPGP)</b> is a massive area of marine debris accumulation in the North Pacific Ocean. It is primarily composed of plastic waste and other pollutants that have been carried by ocean currents. The GPGP poses a significant threat to marine life, as animals can ingest or become entangled in the debris.");
+                    $('#stats').html(`
+                    <ul>
+                        <li>The GPGP covers an estimated surface area of <b>1.6 million</b> square kilometers.</li>
+                        <li>It contains an estimated <b>1.8 trillion</b> pieces of plastic.</li>
+                        <li>The weight of the plastic in the GPGP is estimated to be around <b>80,000 tons</b>.</li>
+                        <li>Marine animals, including fish, sea turtles, and birds, are at risk of ingesting or becoming entangled in the debris.</li>
+                        <li>Efforts to clean up the GPGP include initiatives to remove plastic waste and prevent further pollution.</li>
+                    </ul>
+                    `);
+                    $('#content2').html("You can help address the issue of the Great Pacific Garbage Patch by reducing your plastic consumption, participating in beach cleanups, supporting organizations that work to clean up ocean plastic, advocating for policies that reduce plastic production and improve waste management, and spreading awareness about the impact of plastic pollution on marine environments.");
                 } else if (this.value === 'plastic') {
                     imageUrls = ["Images/plastic1.jpg", "Images/plastic2.jpg"];
-                    $('.description h2').html("Plastic Pollution");
-                    $('.description p').html("Plastic pollution is one of the most pervasive environmental issues affecting the oceans today. Plastics can take hundreds of years to decompose, and during this time, they break down into smaller particles known as microplastics. These microplastics are ingested by marine animals, leading to physical harm, chemical contamination, and even death. Additionally, plastic debris can entangle marine life, damage coral reefs, and disrupt ecosystems. Reducing plastic pollution involves minimizing plastic use, improving recycling efforts, and supporting policies that limit plastic production and waste.");
+                    $('#title').html("Plastic Pollution");
+                    $('#content1').html("Plastic pollution is one of the most pervasive environmental issues affecting the oceans today. Plastics can take hundreds of years to decompose, and during this time, they break down into smaller particles known as microplastics. These microplastics are ingested by marine animals, leading to physical harm, chemical contamination, and even death. Additionally, plastic debris can entangle marine life, damage coral reefs, and disrupt ecosystems.");
+                    $('#stats').html(`
+                    <ul>
+                        <li>Over <b>8 million</b> tons of plastic enter the ocean each year.</li>
+                        <li>Plastic pollution accounts for <b>80%</b> of all marine debris found from surface waters to deep-sea sediments.</li>
+                        <li>Marine species ingest or are entangled by plastic debris, which causes severe injuries and deaths.</li>
+                        <li>Plastic pollution disrupts marine ecosystems and contributes to the decline of marine biodiversity.</li>
+                        <li>Efforts to combat plastic pollution include reducing plastic production, improving waste management, and promoting recycling.</li>
+                    </ul>
+                    `);
+                    $('#content2').html("You can help reduce plastic pollution by minimizing your use of single-use plastics, opting for reusable items such as bags, bottles, and straws, properly recycling plastic waste, participating in community clean-up events, supporting policies and initiatives aimed at reducing plastic production and improving waste management, and spreading awareness about the impact of plastic pollution on the environment.");
                 }
                 $('.images img').attr("src", imageUrls[currIndex]);
-                clicks = 2;
             });
 
             function fadeImages(){
-                if(clicks % 2 == 0){
+                if(clicks % 2 != 0){
                     return;
                 }
                 $(".images img").fadeOut(1000, function() {
@@ -122,10 +157,24 @@
 
             $(".images img").on("click", function() {
                 clicks++;
-                startSlideshow();
             });
 
             function startSlideshow(){
+                $('#ocean').prop('checked', true);
+                $('#title').html("Ocean Pollution");
+                $('#content1').html("Pollution in the ocean is a major environmental issue that affects marine life, ecosystems, and human health. It includes a variety of pollutants such as plastic debris, chemicals, oil spills, and agricultural runoff. These pollutants can harm marine animals, disrupt food chains, and degrade habitats. Ocean pollution also affects coastal communities, impacting tourism, fishing industries, and overall quality of life. Addressing ocean pollution requires global cooperation and sustainable practices to protect our oceans for future generations.");
+                $('#stats').html(`
+                    <ul>
+                        <li>Every year, <b>millions of tons</b> of plastic waste end up in the ocean.</li>
+                        <li>By <b>2050</b>, there will be more plastic in the ocean than fish by weight.</li>
+                        <li>Over <b>100,000 marine animals</b> die each year due to plastic entanglement or ingestion.</li>
+                        <li>Ocean pollution includes plastic debris, chemicals, oil spills, and agricultural runoff.</li>
+                        <li>Pollutants harm marine animals, disrupt food chains, and degrade habitats.</li>
+                        <li>Efforts to reduce ocean pollution involve reducing plastic use, improving waste management, and enforcing regulations.</li>
+                    </ul>
+                `);
+                $('#content2').html("You can help reduce ocean pollution by participating in beach cleanups, reducing your use of single-use plastics, properly disposing of waste, supporting policies that protect the ocean, and spreading awareness about the issue.");
+                imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
                 fadeImages();
                 clearInterval(interval);
                 interval = setInterval(fadeImages, 2000);
