@@ -37,6 +37,7 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    margin-left:25px;
 }
 
 .radio-buttons input[type="radio"] {
@@ -115,5 +116,11 @@ body{
         box-sizing: border-box;
         padding-left: 20px;
         padding-bottom: 20px;
+    }
+}
+
+@media(max-width:450px){
+    .images img{
+        height: 400px;
     }
 }
