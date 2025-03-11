@@ -92,13 +92,20 @@
     <script>
         $(document).ready(function() {
             $("#hamburger").click(function() {
-            $(".hamburgerMenu").slideToggle("fast");
+                if ($(".hamburgerMenu").css("display") === "block") {
+                    $("#hamburger").html("&equiv;");
+                } else {
+                    $("#hamburger").html("&times;");
+                }
+                $(".hamburgerMenu").slideToggle("fast");
+                
             });
 
             $(window).resize(function() {
-            if ($(window).width() > 730) {
-                $(".hamburgerMenu").hide();
-            }
+                if ($(window).width() > 730) {
+                    $(".hamburgerMenu").hide();
+                    $("#hamburger").html("&equiv;");
+                }
             });
 
             let images = {
