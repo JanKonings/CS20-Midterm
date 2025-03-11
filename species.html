@@ -38,11 +38,19 @@
 
     <script>
         $(document).ready(function() {
+            // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
+                // using Jqueries slideToggle to turn the display of the hamburgerMenu div to block
+                // and make the duration "fast"
                 $(".hamburgerMenu").slideToggle("fast");
             });
 
+            // when the window is resized, if the window is greater than 730px, the hamburger menu will hide
+            // because the hamburger menu is only visible when the window is less than 730px
+            // this is just for the edge case if the user resizes the window passed 730px while the hamburger menu
+            // is still dropped down
             $(window).resize(function() {
+                // if the window is greater than 730px, the hamburger menu will hide
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
                 }
@@ -74,11 +82,16 @@
     </div>
 
     <script>
-        // waiting for document to load before running script
+        // get the JSON file and run the function, which will create the initial list of species
         $.get("https://jankonings.github.io/CS20-Midterm/species.JSON", function(animals) {
+            // create a blank string to hold the initial list of species
             var initialList = "";
+            // for each animal type in the JSON file (out of the five categories) 
             for (var animal in animals) {
+                // for each species in the animal type, we will get the name, scientific name, reason for endangerment, and role in ecosystem
+                // and append it to the initial list output
                 animals[animal].forEach(function(species) {
+                    // creating the html for the output
                     initialList += "<div class='species'>";
                     initialList += "<div class='specieInfo'>";
                     initialList += "<h3>" + species.name + "</h3>";
@@ -91,7 +104,9 @@
                 });
             }
 
+            // output the initial list to the page once the document is ready and images are loaded
             $(document).ready(function() {
+                // output the initial list to the page
                 $(".output").html(initialList);
             });
 
@@ -118,7 +133,6 @@
                             output += "</div>";
                         });
                     }
-                    $(".output").html(output); 
                 // if the category is not "all", then if the categories tag of 
                 // the JSON includes a category that matches the chosen category
                 // we also include the content
@@ -134,9 +148,9 @@
                         output += "<img class='speciesImage' src='Images/" + species.name + ".jpg'>";
                         output += "</div>";
                     });
-
-                    $(".output").html(output); 
                 }
+                // output the content to the page into the ouput div
+                $(".output").html(output); 
             });
         });
     </script>
