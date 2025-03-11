@@ -180,25 +180,6 @@ body {
     }
 }
 
-/* @media (max-width: 500px) {
-    h1 {
-        color: transparent; 
-    }
-
-    h1::before {
-        content: "OA";
-        color: #f7faff;
-    }
-
-} */
-
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
 .content {
     flex: 1;
     font-size: 300px;
