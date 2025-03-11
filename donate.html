@@ -6,10 +6,13 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="donate.css">
     <link rel="stylesheet" href="footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <style type = "text/css">
+        h1, h2, h3 {
+            font-family: 'PT Serif', serif;
+        }
     </style>
 </head>
 <body>
@@ -39,13 +42,32 @@
 
     <script>
         $(document).ready(function() {
+            // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
+                // if the hamburger menu is already displayed, the hamburger button will change to X icon to anticipate the change
+                // of slidetoggle effect
+                if ($(".hamburgerMenu").css("display") === "block") {
+                    $("#hamburger").html("&equiv;");
+                // if the hamburger menu is not displayed, the hamburger button will change to the hamburger icon to anticipate the change
+                // of slidetoggle effect
+                } else {
+                    $("#hamburger").html("&times;");
+                }
+                // using Jqueries slideToggle to turn the display of the hamburgerMenu div to block
+                // and make the duration "fast"
                 $(".hamburgerMenu").slideToggle("fast");
             });
 
+            // when the window is resized, if the window is greater than 730px, the hamburger menu will hide
+            // because the hamburger menu is only visible when the window is less than 730px
+            // this is just for the edge case if the user resizes the window passed 730px while the hamburger menu
+            // is still dropped down
             $(window).resize(function() {
+                // if the window is greater than 730px, the hamburger menu will hide
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
+                    // the hamburger button will change to the hamburger icon
+                    $("#hamburger").html("&equiv;");
                 }
             });
         })
@@ -53,7 +75,7 @@
 
     <div class="donate">
         <h2>The ocean depends on you!</h2>
-        <p1>Thank you for considering a donation to OceanAid. Your contribution will help us continue our work to protect marine life and preserve the health of our oceans. Please fill out the form below to make a donation.</p1>
+        <p>Thank you for considering a donation to OceanAid. Your contribution will help us continue our work to protect marine life and preserve the health of our oceans. Please fill out the form below to make a donation.</p>
 
         <form id="donateForm" method="GET">
             <div class="buttonContainer">

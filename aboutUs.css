@@ -5,7 +5,7 @@ body {
 .aboutUs-content {
     display: flex;
     flex-direction: row;
-    background-color: rgb(233, 239, 243);
+    background-color: rgb(247, 243, 238);
     flex-wrap: wrap;
 }  
 

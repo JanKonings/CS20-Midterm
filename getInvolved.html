@@ -6,7 +6,14 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="getInvolved.css">
     <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style type="text/css">
+        body {
+            font-family: 'PT Serif', serif;
+        }
+        
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -35,17 +42,45 @@
 
     <script>
         $(document).ready(function() {
+            // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
+                // if the hamburger menu is already displayed, the hamburger button will change to X icon to anticipate the change
+                // of slidetoggle effect
+                if ($(".hamburgerMenu").css("display") === "block") {
+                    $("#hamburger").html("&equiv;");
+                // if the hamburger menu is not displayed, the hamburger button will change to the hamburger icon to anticipate the change
+                // of slidetoggle effect
+                } else {
+                    $("#hamburger").html("&times;");
+                }
+                // using Jqueries slideToggle to turn the display of the hamburgerMenu div to block
+                // and make the duration "fast"
                 $(".hamburgerMenu").slideToggle("fast");
             });
 
+            // when the window is resized, if the window is greater than 730px, the hamburger menu will hide
+            // because the hamburger menu is only visible when the window is less than 730px
+            // this is just for the edge case if the user resizes the window passed 730px while the hamburger menu
+            // is still dropped down
             $(window).resize(function() {
+                // if the window is greater than 730px, the hamburger menu will hide
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
+                    // the hamburger button will change to the hamburger icon
+                    $("#hamburger").html("&equiv;");
                 }
             });
         })
     </script>
+
+    <div class="getInvolved-content">
+        <h2>Get Involved!</h2>
+        <p>Join the movement to protect our ocean!</p>
+
+        <div class="atStakeSection">
+            <img src="Images/Atlantic Bluefin Tuna.jpg" alt="Get Involved Image">
+        </div>
+    </div>
 
     <div class="footer">
         <div class="footer-left">

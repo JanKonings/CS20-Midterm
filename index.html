@@ -59,7 +59,7 @@
         </div>
         <div class="solution">
             <h3>The Solution</h3>
-            <p>OceaAid is dedicated to protecting and restoring our oceans. Through conservation efforts, cleanup initiatives, and education, we empower communities to take action. We support sustainable practices, advocate for stronger environmental policies, and work with volunteers to remove waste from beaches and waterways. Together, we can ensure a healthier, thriving ocean for all.</p>
+            <p>OceanAid is dedicated to protecting and restoring our oceans. Through conservation efforts, cleanup initiatives, and education, we empower communities to take action. We support sustainable practices, advocate for stronger environmental policies, and work with volunteers to remove waste from beaches and waterways. Together, we can ensure a healthier, thriving ocean for all.</p>
         </div>
     </div>
 
@@ -99,19 +99,31 @@
 
     <script>
         $(document).ready(function() {
+            // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
+                // if the hamburger menu is already displayed, the hamburger button will change to X icon to anticipate the change
+                // of slidetoggle effect
                 if ($(".hamburgerMenu").css("display") === "block") {
                     $("#hamburger").html("&equiv;");
+                // if the hamburger menu is not displayed, the hamburger button will change to the hamburger icon to anticipate the change
+                // of slidetoggle effect
                 } else {
                     $("#hamburger").html("&times;");
                 }
+                // using Jqueries slideToggle to turn the display of the hamburgerMenu div to block
+                // and make the duration "fast"
                 $(".hamburgerMenu").slideToggle("fast");
-                
             });
 
+            // when the window is resized, if the window is greater than 730px, the hamburger menu will hide
+            // because the hamburger menu is only visible when the window is less than 730px
+            // this is just for the edge case if the user resizes the window passed 730px while the hamburger menu
+            // is still dropped down
             $(window).resize(function() {
+                // if the window is greater than 730px, the hamburger menu will hide
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
+                    // the hamburger button will change to the hamburger icon
                     $("#hamburger").html("&equiv;");
                 }
             });
