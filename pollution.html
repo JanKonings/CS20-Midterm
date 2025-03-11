@@ -203,6 +203,12 @@
                 clicks++;
             });
 
+            // Add an indicator that the image can be clicked to stop and start the slideshow
+            $(".images img").on("mouseenter", function() {
+                $(this).css("cursor", "pointer");
+                $(this).attr("title", "Click to stop/start slideshow");
+            });
+
             // Function to start the slideshow
             function startSlideshow(){
                 $('#ocean').prop('checked', true);
