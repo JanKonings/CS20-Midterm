@@ -24,6 +24,7 @@
     height: 200px;
     background-color: rgba(176, 196, 233, 0.80);
     border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .missionStatement h2 {
@@ -46,6 +47,14 @@
     text-align: center;
     padding: 20px;
     border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.50);
+}
+
+/*  make a seperate rule for problem div in order to make the inset more apparent,
+    adding to the depth of the container */
+.problem {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 .solution {
@@ -81,6 +90,9 @@
     padding: 20px;
     border-radius: 10px;
     opacity: 80%;
+    /* border: 1px solid #ffffff; */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+
 }
 
 .help ul {
@@ -92,6 +104,10 @@
     border-radius: 10px;
     opacity: 80%;
     line-height: 2; /* Adjust the line height to control spacing */
+    /* border: 1px solid #ffffff; */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+
+    
 }
 
 .help ul li {
