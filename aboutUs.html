@@ -5,8 +5,96 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="aboutUs.css">
     <link rel="stylesheet" href="footer.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="navbar">
+        <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
+        <h1><a href="index.html">OceanAid</a></h1>
+        <div class="nav-links">
+            <a id="aboutUs" href="aboutUs.html">About Us</a>
+            <a id="species" href="species.html">Species</a>
+            <a id="pollution" href="pollution.html">Pollution</a>
+            <a id="getInvolved" href="getInvolved.html">Get Involved</a>
+            <a id="contact" href="contact.html">Contact</a>
+            <a id="donate-link" href="donate.html">Donate</a>
+            <button type="button" id="hamburger">&equiv;</button>
+        </div>
+    </div>
+
+    <div class="hamburgerMenu">
+        <div class="navItems">
+            <a id="aboutUs" href="aboutUs.html">About Us</a>
+            <a id="species" href="species.html">Species</a>
+            <a id="pollution" href="pollution.html">Pollution</a>
+            <a id="getInvolved" href="getInvolved.html">Get Involved</a>
+            <a id="contact" href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#hamburger").click(function() {
+                $(".hamburgerMenu").slideToggle("fast");
+            });
+
+            $(window).resize(function() {
+                if ($(window).width() > 730) {
+                    $(".hamburgerMenu").hide();
+                }
+            });
+        })
+    </script>
+
+    <div class="aboutUs-content">
+        <div class="column">
+            <h2>Our Mission & Vision</h2>
+            <p>OceanAid stands at the forefront of marine wildlife protection. We actively work to conserve endangered species and monitor marine populations to prevent further decline. Equally important is our community engagement; we build strong partnerships with local groups, volunteers, and experts, creating a united front to champion sustainable practices and marine stewardship.</p>
+            <img src="Images/endangered.jpg" alt="Endangered Species" style="width:85%; height:auto;">
+        </div>
+        <div class="column">
+            <h2>Conservation & Cleanup</h2>
+            <p>We believe that a healthy ocean starts with preserving its natural beauty. Through habitat restoration projects-from safeguarding delicate coral reefs to preserving mangroves-we work tirelessly to maintain nature's underwater wonders. Our cleanup initiatives focus on reducing ocean trash and pollution, ensuring that our waters remain a safe haven for marine life.</p>
+            <img src="Images/coralhabitat.jpg" alt="Cleanup" style="width:85%; height:auto;">
+        </div>
+        <div class="column">
+            <h2>Education & Innovation</h2>
+            <p>OceanAid stands at the forefront of marine wildlife protection. We actively work to conserve endangered species and monitor marine populations to prevent further decline. Equally important is our community engagement; we build strong partnerships with local groups, volunteers, and experts, creating a united front to champion sustainable practices and marine stewardship.</p>
+            <img src="Images/cleaningocean.jpg" alt="Education" style="width:85%; height:auto;">
+        </div>
+        <div class="column">
+            <h2>Wildlife & Community Engagement</h2>
+            <p>Knowledge is the tide that turns challenges into solutions. We invest in cutting-edge research and community education to spread awareness about ocean issues. Our innovative programs leverage technology and creative strategies to find sustainable solutions, empowering individuals and communities to make impactful changes in ocean conservation.</p>
+            <img src="Images/communityengagement.jpg" alt="Community Engagement" style="width:85%; height:auto;">
+        </div>
+
+    </div>
+
+    <div class="meet-the-team">
+        <h2>Meet the Team</h2>
+        <div class="team-photos">
+            <div class="member">
+                <img src="Images/jankonings.jpg" alt="Team Member 1" class="circle-image">
+                <h3>Jan Konings </h3>
+                <h4>Tufts University</h4>
+                <h4>Computer Engineering</h4>
+            </div>
+
+            <div class="member">
+                <img src="Images/ryanchen.jpg" alt="Team Member 2" class="circle-image">
+                <h3>Ryan Chen</h3>
+                <h4>Tufts University</h4>
+                <h4>Computer Engineering</h4>
+            </div>
+
+            <div class="member">
+                <img src="Images/kevinlu.jpg" alt="Team Member 3" class="circle-image">
+                <h3>Kevin Lu</h3>
+                <h4>Tufts University</h4>
+                <h4>Cognitive Brain Science</h4>
+            </div>
+        </div>
+    </div>
 
     <div class="footer">
         <div class="footer-left">
