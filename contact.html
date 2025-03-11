@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html> 
 <head>
-<link rel="stylesheet" href="header.css">
-<link rel="stylesheet" href="contact.css">
-<link rel="stylesheet" href="footer.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to external CSS files for styling -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="footer.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script
-    src="https://code.jquery.com/jquery-3.7.1.js"
-    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"
-></script>
+    <!-- jQuery library -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"
+    ></script>
 </head>
 <body>
     
+    <!-- Navigation bar -->
     <div class="navbar">
         <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
         <h1><a href="index.html">OceanAid</a></h1>
@@ -28,6 +31,7 @@
         </div>
     </div>
 
+    <!-- Hamburger menu for mobile view -->
     <div class="hamburgerMenu">
         <div class="navItems">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
@@ -38,29 +42,37 @@
         </div>
     </div>
 
-    
+    <!-- jQuery script to handle hamburger menu toggle and window resize -->
     <script>
         $(document).ready(function() {
             $("#hamburger").click(function() {
+                if ($(".hamburgerMenu").css("display") === "block") {
+                    $("#hamburger").html("&equiv;");
+                } else {
+                    $("#hamburger").html("&times;");
+                }
                 $(".hamburgerMenu").slideToggle("fast");
             });
 
             $(window).resize(function() {
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
+                    $("#hamburger").html("&equiv;");
                 }
             });
         })
     </script>
 
+    <!-- Main content area -->
     <div class="content">
-        <div class = "formContent">
-            <div class = "formDescription">
+        <div class="formContent">
+            <div class="formDescription">
                 <h1>For questions or inquiries, please fill out this form</h1>
             </div>
             
-            <div class = "form">
-                <form id = "contactForm" method = "get" action = "#">
+            <div class="form">
+                <!-- Contact form -->
+                <form id="contactForm" method="get" action="#">
                     <label for="name">Name:</label><br>
                     <input type="text" id="name" name="name"><br><br>
                     <label for="email">Email:</label><br>
@@ -73,9 +85,9 @@
                 </form>
             </div>
         </div>
-
     </div>
 
+    <!-- Footer section -->
     <div class="footer">
         <div class="footer-left">
             <h1>OA</h1>
@@ -96,10 +108,10 @@
         
         <div class="footer-right">
             <p>All Rights Reserved 2014-2025 OceanAid Inc.</p>
-
         </div>
     </div>
 
+    <!-- jQuery validation for the contact form -->
     <script>
         $("#contactForm").validate();
     </script>

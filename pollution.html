@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html> 
 <head>
+    <!-- Link to external CSS files for styling -->
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="pollution.css">
     <link rel="stylesheet" href="footer.css">
+    <!-- Meta tag for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to jQuery library -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <!-- Navigation bar -->
     <div class="navbar">
         <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
         <h1><a href="index.html">OceanAid</a></h1>
@@ -23,6 +27,7 @@
         </div>
     </div>
 
+    <!-- Hamburger menu for mobile view -->
     <div class="hamburgerMenu">
         <div class="navItems">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
@@ -33,12 +38,15 @@
         </div>
     </div>
 
+    <!-- jQuery script for hamburger menu functionality -->
     <script>
         $(document).ready(function() {
+            // Toggle hamburger menu on click
             $("#hamburger").click(function() {
                 $(".hamburgerMenu").slideToggle("fast");
             });
 
+            // Hide hamburger menu on window resize if width is greater than 730px
             $(window).resize(function() {
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
@@ -47,8 +55,10 @@
         })
     </script>
 
+    <!-- Main content section for pollution information -->
     <div class="pollutionContent">
         <div class="left-panel">
+            <!-- Radio buttons for selecting pollution type -->
             <div class="radio-buttons">
                 <input type="radio" id="ocean" name="pollution" value="ocean">
                 <label for="ocean">Ocean</label><br>
@@ -59,6 +69,7 @@
                 <input type="radio" id="plastic" name="pollution" value="plastic">
                 <label for="plastic">Plastic</label>
             </div> 
+            <!-- Description section for pollution details -->
             <div class="description">
                 <h2 id = "title"></h2>
                 <p1 id = "content1"></p1>
@@ -70,12 +81,14 @@
             </div>
         </div>
         <div class="right-panel">
+            <!-- Image section for pollution images -->
             <div class="images">
                 <img src="Images/ocean1.jpg" alt="images">
             </div>
         </div>
     </div>
 
+    <!-- Footer section -->
     <div class="footer">
         <div class="footer-left">
             <h1>OA</h1>
@@ -96,10 +109,10 @@
         
         <div class="footer-right">
             <p>All Rights Reserved 2014-2025 OceanAid Inc.</p>
-
         </div>
     </div>
 
+    <!-- jQuery script for handling radio button changes and image slideshow -->
     <script>
         $(document).ready(function(){
             var imageUrls = [];
@@ -108,6 +121,7 @@
             var clicks = 0;
             startSlideshow();
             $('input[type=radio][name=pollution]').change(function() {
+                // Update content based on selected pollution type
                 if (this.value === 'ocean') {
                     imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
                     $('#title').html("Ocean Pollution");
@@ -166,26 +180,42 @@
                     `);
                     $('#content2').html("You can help reduce plastic pollution by minimizing your use of single-use plastics, opting for reusable items such as bags, bottles, and straws, properly recycling plastic waste, participating in community clean-up events, supporting policies and initiatives aimed at reducing plastic production and improving waste management, and spreading awareness about the impact of plastic pollution on the environment.");
                 }
+                // Update image source based on selected pollution type
                 $('.images img').attr("src", imageUrls[currIndex]);
             });
 
+            // Function to handle image fading for slideshow
             function fadeImages(){
-                if(clicks % 2 != 0){
+                //if the image has been clicked an odd number of times return
+                //from the slideshow.
+                if(clicks % 2 == 0){
                     return;
                 }
                 $(".images img").fadeOut(1000, function() {
+                    //increment index to go to next photo and mod by 2 so if we 
+                    //reach the last photo it loops back to the first.
                     currIndex = (currIndex + 1) % 2;
                     $('.images img').attr("src", imageUrls[currIndex]);
                     $('.images img').fadeIn(1000);
                 });
             }
 
+            // Increment click count on image click
             $(".images img").on("click", function() {
                 clicks++;
             });
 
+            // Add an indicator that the image can be clicked to stop and start the slideshow
+            $(".images img").on("mouseenter", function() {
+                $(this).css("cursor", "pointer");
+                $(this).attr("title", "Click to stop/start slideshow");
+            });
+
+            // Function to start the slideshow
             function startSlideshow(){
+                //set ocean to be checked by default
                 $('#ocean').prop('checked', true);
+                //set content for ocean
                 $('#title').html("Ocean Pollution");
                 $('#content1').html("Pollution in the ocean is a major environmental issue that affects marine life, ecosystems, and human health. It includes a variety of pollutants such as plastic debris, chemicals, oil spills, and agricultural runoff. These pollutants can harm marine animals, disrupt food chains, and degrade habitats. Ocean pollution also affects coastal communities, impacting tourism, fishing industries, and overall quality of life. Addressing ocean pollution requires global cooperation and sustainable practices to protect our oceans for future generations.");
                 $('#stats').html(`
@@ -200,8 +230,11 @@
                 `);
                 $('#content2').html("You can help reduce ocean pollution by participating in beach cleanups, reducing your use of single-use plastics, properly disposing of waste, supporting policies that protect the ocean, and spreading awareness about the issue.");
                 imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
+                //run fadeImages
                 fadeImages();
+                //clear interval
                 clearInterval(interval);
+                //set interval to continuously call fadeImages
                 interval = setInterval(fadeImages, 2000);
             }
 
