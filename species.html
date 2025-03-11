@@ -47,6 +47,11 @@
         $(document).ready(function() {
             // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
+                if ($(".hamburgerMenu").css("display") === "block") {
+                    $("#hamburger").html("&equiv;");
+                } else {
+                    $("#hamburger").html("&times;");
+                }
                 // using Jqueries slideToggle to turn the display of the hamburgerMenu div to block
                 // and make the duration "fast"
                 $(".hamburgerMenu").slideToggle("fast");
@@ -60,6 +65,7 @@
                 // if the window is greater than 730px, the hamburger menu will hide
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
+                    $("#hamburger").html("&equiv;");
                 }
             });
         })
