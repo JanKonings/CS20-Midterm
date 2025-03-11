@@ -14,7 +14,7 @@
 <body>
     <div class="navbar">
         <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
-        <h1>OceanAid</h1>
+        <h1><a href="index.html">OceanAid</a></h1>
         <div class="nav-links">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
             <a id="species" href="species.html">Species</a>
@@ -112,30 +112,49 @@
         </form>
 
         <script>
+            // all code should run after the document is ready
             $(document).ready(function(){
+                // event listener for the one-time donation button
                 $("#singleTime").click(function(){
+                    // add the active class to the button that was clicked
                     $(this).addClass("active");
+                    // remove the active class from the monthly button
                     $("#monthly").removeClass("active");
+                    // loop through each custom radio button
                     $(".customRadio").each(function() {
+                        // get the label element that corresponds to the radio button
                         var label = $("label[for='" + $(this).attr("id") + "']");
+                        // set the text of the label to the value of the radio button
                         label.text("$" + $(this).attr("id"));
                     });
+                    // change the placeholder text of the custom amount input
                     $("#customAmount").attr("placeholder", "Custom Amount : $");
                 });
 
+                // event listener for the monthly donation button
                 $("#monthly").click(function(){
+                    // add the active class to the button that was clicked
                     $(this).addClass("active");
+                    // remove the active class from the one-time button
                     $("#singleTime").removeClass("active");
+                    // loop through each custom radio button
                     $(".customRadio").each(function() {
+                        // get the label element that corresponds to the radio button
                         var label = $("label[for='" + $(this).attr("id") + "']");
+                        // set the text of the label to the value of the radio button
                         label.text("$" + $(this).attr("id") + " / month");
                     });
+                    // change the placeholder text of the custom amount input
                     $("#customAmount").attr("placeholder", "Custom Amount : $ / month");
                 });
 
+                // event listener for the payment method select element
                 $("#paymentMethod").change(function(){
+                    // create a variable to hold the output
                     var output = "";
+                    // check the value of the select element
                     if ($(this).val() === "Credit") {
+                        // create the input elements for the credit card information
                         output += "<input type='text' id='cardNum' class='spanText' placeholder='Card Number'>";
                         output += "<h3>Expiration Details</h3>";
                         output += "<div class='cardInfo'>";
@@ -170,7 +189,9 @@
                                     "</select>";
                         output += "<input type='text' id='CVV' class='spanText' placeholder='CVV'>";
                         output += "</div>";
+                    // if the bank transfer option is selected, create the input elements for the bank information
                     } else if ($(this).val() === "Bank") {
+                        // create the input elements for the bank information
                         output += "<input type='text' id='routingNum' class='spanText' placeholder='Routing Number'>";
                         output += "<div class='bankInfo'>";
                         output += "<input type='text' id='accountNum' class='spanText' placeholder='Account Number'>";
@@ -181,27 +202,30 @@
                             "<option value='savings'>Savings</option>" +
                             "<option value='Checking'>Checking</option>" +
                             "</select>";
-                    } else if ($(this).val() === "Venmo") {
-
                     }
-
+                    // set the html of the payment method div to the correct output (bank or card)
                     $(".method").html(output);
 
                 });
 
+                // function to validate the  donate form entries
                 function validateForm() {
                     $(".errors").text(""); // Clear previous errors
 
+                    // Check if a donation type has been selected
                     if (!$("#monthly").hasClass("active") && !$("#singleTime").hasClass("active")) {
+                        // Display error message if no donation type has been selected
                         $(".errors").text("Please select a donation type (One-Time or Monthly).");
                         return false;
                     }
-
+                    // Check if a donation amount has been selected or entered
                     if (!$("input[name='donationAmount']:checked").val() && $("#customAmount").val() === "") {
+                        // Display error message if no donation amount has been selected or entered
                         $(".errors").text("Please select or enter a donation amount.");
                         return false;
                     }
-
+                    // Check if the first name, last name, email, and phone number fields are empty
+                    // the appropriate error message is displayed if any of the fields are empty
                     if ($("#first").val() === "") {
                         $(".errors").text("Please enter your first name.");
                         return false;
@@ -215,10 +239,12 @@
                         $(".errors").text("Please enter your phone number.");
                         return false;
                     }
-
+                    // Check if the payment method select element is empty
                     if ($("#paymentMethod").val() === null) {
                         $(".errors").text("Please select a payment method.");
                         return false;
+                    // Check if the credit card information fields are empty
+                    // the appropriate error message is displayed if any of the fields are empty    
                     } else if ($("#paymentMethod").val() === "Credit") {
                         if ($("#cardNum").val() === "") {
                             $(".errors").text("Please enter your card number.");
@@ -233,6 +259,8 @@
                             $(".errors").text("Please enter your CVV.");
                             return false;
                         }
+                    // Check if the bank information fields are empty
+                    // the appropriate error message is displayed if any of the fields are empty
                     } else if ($("#paymentMethod").val() === "Bank") {
                         if ($("#routingNum").val() === "") {
                             $(".errors").text("Please enter your routing number.");
@@ -251,35 +279,38 @@
                             return false;
                         }
                     }
-
+                    // return true if all fields are filled out
                     return true;
                 }
-
+                // event listener for the click of the submit button
                 $("#submitBtn").click(function(event) {
+                    // prevent the form from submitting if the form is not valid
                     if (!validateForm()) {
+                        // prevent the form from submitting
                         event.preventDefault();
                     } else {
+                        // alert the user that the donation was successful and thank them for their contribution
                         alert("Every donation goes a long way, we thank you for your contribution to OceanAid's misson!");
                     }
                 });
-
+                // event listener for the click of any input, select, or button element
                 $(document).on("click", "input, select, button[type='button']", function() {
+                    // clear the error messages when the user clicks on any of the form elements
                     $(".errors").html("");
                 });
-
+                // event listener for the input event on the custom amount input
                 $("#customAmount").on("input", function() {
+                    // uncheck all of the radio buttons when the user types in the custom amount input
                     document.querySelectorAll("input[name='donationAmount']").forEach(function(el) {
                         el.checked = false;
                     });
                 });
-
+                // event listener for the click of any of the custom radio buttons
                 $(".customRadio").click(function() {
+                    // clear the custom amount input when the user clicks on any of the radio buttons
                     $("#customAmount").val("");
                 });
             });
-
-            
-
         </script>
     </div>
     
