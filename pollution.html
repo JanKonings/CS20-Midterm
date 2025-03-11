@@ -43,6 +43,11 @@
         $(document).ready(function() {
             // Toggle hamburger menu on click
             $("#hamburger").click(function() {
+                if ($(".hamburgerMenu").css("display") === "block") {
+                    $("#hamburger").html("&equiv;");
+                } else {
+                    $("#hamburger").html("&times;");
+                }
                 $(".hamburgerMenu").slideToggle("fast");
             });
 
@@ -50,6 +55,7 @@
             $(window).resize(function() {
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
+                    $("#hamburger").html("&equiv;");
                 }
             });
         })
