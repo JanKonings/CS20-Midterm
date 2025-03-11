@@ -141,13 +141,13 @@
                 }
 
                 // Validate email
-                if (!($("#email").contains('@'))) {
+                if (!$("#email").val().includes('@')) {
                     $("#errors").text("Please enter a valid email address.");
                     isValid = false;
                 }
 
                 // Validate phone number
-                if ($("#phone").length !== 10) {
+                if ($("#phone").val().trim().length !== 10) {
                     $("#errors").text("Please enter a valid 10-digit phone number.");
                     isValid = false;
                 }
