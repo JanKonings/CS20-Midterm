@@ -192,6 +192,8 @@
                     return;
                 }
                 $(".images img").fadeOut(1000, function() {
+                    //increment index to go to next photo and mod by 2 so if we 
+                    //reach the last photo it loops back to the first.
                     currIndex = (currIndex + 1) % 2;
                     $('.images img').attr("src", imageUrls[currIndex]);
                     $('.images img').fadeIn(1000);
@@ -211,7 +213,9 @@
 
             // Function to start the slideshow
             function startSlideshow(){
+                //set ocean to be checked by default
                 $('#ocean').prop('checked', true);
+                //set content for ocean
                 $('#title').html("Ocean Pollution");
                 $('#content1').html("Pollution in the ocean is a major environmental issue that affects marine life, ecosystems, and human health. It includes a variety of pollutants such as plastic debris, chemicals, oil spills, and agricultural runoff. These pollutants can harm marine animals, disrupt food chains, and degrade habitats. Ocean pollution also affects coastal communities, impacting tourism, fishing industries, and overall quality of life. Addressing ocean pollution requires global cooperation and sustainable practices to protect our oceans for future generations.");
                 $('#stats').html(`
@@ -226,8 +230,11 @@
                 `);
                 $('#content2').html("You can help reduce ocean pollution by participating in beach cleanups, reducing your use of single-use plastics, properly disposing of waste, supporting policies that protect the ocean, and spreading awareness about the issue.");
                 imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
+                //run fadeImages
                 fadeImages();
+                //clear interval
                 clearInterval(interval);
+                //set interval to continuously call fadeImages
                 interval = setInterval(fadeImages, 2000);
             }
 
