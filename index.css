@@ -166,6 +166,10 @@
     .help ul {
         font-size: 12px;
     }
+
+    #helpOptions a.helpLinks {
+        padding: 5px 10px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -190,10 +194,6 @@
     
     .issue p {
         font-size: 11px;
-    }
-
-    #helpOptions a.helpLinks {
-        padding: 5px 10px;
     }
 }
 
