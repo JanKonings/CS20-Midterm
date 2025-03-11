@@ -1,4 +1,4 @@
-.content {
+.pollutionContent {
     display: flex;
     justify-content: space-between;
 }
@@ -102,7 +102,7 @@ body{
         width: 95%;
     }
 
-    .content {
+    .pollutionContent {
         display: inline-block;
         justify-content: space-between;
     }
