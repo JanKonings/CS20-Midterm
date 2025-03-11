@@ -7,7 +7,8 @@
     background-color: #f7faff;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    min-height: 100vh; /*   this is so that the background image will always cover the page
+                            however the page can get bigger, if needed by the margins of the inner content */
 }
 
 .donate h2 {
@@ -35,7 +36,7 @@
 .donate #donateForm {
     display: block;
     width: 70%;
-    background-color: aliceblue;
+    background-color: rgb(231, 240, 248);
     padding: 20px;
     border-radius: 5px;
     margin: 0;
@@ -96,8 +97,8 @@ button#singleTime.active {
 .customRadio + label{
     flex: 1;
     display: inline-flex; 
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
     height: 40px;
     font-size: 18px;
     margin: 10px 0 10px 0;
@@ -160,8 +161,8 @@ h3 {
 
 .personalInfo {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Ensures two equal columns */
-    grid-template-rows: auto auto; /* Adjusts row heights dynamically */
+    grid-template-columns: 1fr 1fr; /* Each colomn has equal width, two columns */
+    grid-template-rows: auto auto; /* Adjusts row heights automatically depending on content */
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -208,8 +209,8 @@ h3 {
 
 .cardInfo {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* First two columns are a quarter each, third column is half */
-    grid-template-rows: auto auto; /* Adjusts row heights dynamically */
+    grid-template-columns: 1fr 1fr 1fr; /* Each colomn has equal width, three columns */
+    grid-template-rows: auto auto; /* Adjusts row heights automatically depending on content */
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -226,8 +227,8 @@ h3 {
 
 .bankInfo {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto auto; /* Adjusts row heights dynamically */
+    grid-template-columns: 1fr 1fr; /* Each colomn has equal width*/
+    grid-template-rows: auto auto; /* Adjusts row heights automatically depending on content */
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;

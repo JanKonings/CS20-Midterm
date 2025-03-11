@@ -113,3 +113,116 @@
     background-color: #000000;
     color: #ffffff;
 }
+
+@media (max-width: 900px) {
+    .missionStatement h2 {
+        font-size: 25px;
+    }
+
+    .missionStatement {
+        padding: 15px;
+        height: 170px;
+    }
+
+    .issue h3 {
+        font-size: 25px;
+    }
+    
+    .issue p {
+        font-size: 15px;
+    }
+
+    .help h3 {
+        font-size: 25px;
+    }
+
+    .help ul {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .missionStatement h2 {
+        font-size: 20px;
+    }
+
+    .missionStatement {
+        padding: 15px;
+        height: 150px;
+    }
+
+    .issue h3 {
+        font-size: 20px;
+    }
+    
+    .issue p {
+        font-size: 13px;
+    }
+
+    .help h3 {
+        font-size: 20px;
+    }
+
+    .help ul {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .help ul {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    .missionStatement h2 {
+        font-size: 15px;
+    }
+
+    .missionStatement {
+        padding: 15px;
+        height: 130px;
+    }
+
+    .issue h3 {
+        font-size: 15px;
+    }
+    
+    .issue p {
+        font-size: 11px;
+    }
+
+    #helpOptions a.helpLinks {
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .help ul {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 350px) {
+    .missionStatement h2 {
+        font-size: 15px;
+    }
+
+    .missionStatement {
+        padding: 15px;
+        height: 130px;
+    }
+
+    .issue h3 {
+        font-size: 15px;
+    }
+    
+    .issue p {
+        font-size: 10px;
+    }
+
+    .help ul {
+        font-size: 12px;
+    }
+}
