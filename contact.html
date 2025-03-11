@@ -20,13 +20,13 @@
     <div class="navbar">
         <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
         <h1><a href="index.html">OceanAid</a></h1>
-        <div class="nav-links">
+        <div class="navLinks">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
             <a id="species" href="species.html">Species</a>
             <a id="pollution" href="pollution.html">Pollution</a>
             <a id="getInvolved" href="getInvolved.html">Get Involved</a>
             <a id="contact" href="contact.html">Contact</a>
-            <a id="donate-link" href="donate.html">Donate</a>
+            <a id="donateLink" href="donate.html">Donate</a>
             <button type="button" id="hamburger">&equiv;</button>
         </div>
     </div>
@@ -45,18 +45,33 @@
     <!-- jQuery script to handle hamburger menu toggle and window resize -->
     <script>
         $(document).ready(function() {
+            // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
+                // if the hamburger menu is already displayed, the hamburger button will change to X icon to anticipate the change
+                // of slidetoggle effect
                 if ($(".hamburgerMenu").css("display") === "block") {
                     $("#hamburger").html("&equiv;");
+                // if the hamburger menu is not displayed, the hamburger button will change to the hamburger icon to anticipate the change
+                // of slidetoggle effect
                 } else {
                     $("#hamburger").html("&times;");
                 }
+                // using Jqueries slideToggle to turn the display of the hamburgerMenu div to block
+                // and make the duration "fast"
+                // the slidetoggle will automatically switch the display of the hamburgerMenu div from block to none
+                // and vice versa
                 $(".hamburgerMenu").slideToggle("fast");
             });
 
+            // when the window is resized, if the window is greater than 730px, the hamburger menu will hide
+            // because the hamburger menu is only visible when the window is less than 730px
+            // this is just for the edge case if the user resizes the window passed 730px while the hamburger menu
+            // is still dropped down
             $(window).resize(function() {
+                // if the window is greater than 730px, the hamburger menu will hide
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
+                    // the hamburger button will change to the hamburger icon
                     $("#hamburger").html("&equiv;");
                 }
             });
@@ -81,7 +96,8 @@
                     <input type="phone" id="phone" name="phone"><br><br>
                     <label for="message">Message:</label><br>
                     <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-                    <input type="submit" value="Submit">
+                    <input type="submit" id = "submitBtn" value="Submit">
+                    <label for="submitBtn" id="errors"></label><br>
                 </form>
             </div>
         </div>
@@ -113,7 +129,42 @@
 
     <!-- jQuery validation for the contact form -->
     <script>
-        $("#contactForm").validate();
+        $(document).ready(function() {
+            $("#submitBtn").click(function(event) {
+                var isValid = true;
+                $(".errors").text("")
+
+                // Validate name
+                if ($("#name").val().trim() === "") {
+                    $("#errors").text("Name is required.");
+                    isValid = false;
+                }
+
+                // Validate email
+                if (!$("#email").val().includes('@')) {
+                    $("#errors").text("Please enter a valid email address.");
+                    isValid = false;
+                }
+
+                // Validate phone number
+                if ($("#phone").val().trim().length !== 10) {
+                    $("#errors").text("Please enter a valid 10-digit phone number.");
+                    isValid = false;
+                }
+
+                // Validate message
+                if ($("#message").val().trim() === "") {
+                    $("#errors").text("Message is required.");
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                }else{
+                    alert("Thank you for the message we will get back to you as soon as possible.");
+                }
+            });
+        });
     </script>
 </body>
 </html>

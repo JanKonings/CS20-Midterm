@@ -53,6 +53,13 @@ html, body{
     font-weight: bold;
 }
 
+#errors{
+    margin-left:20px;
+    font-weight: bold;
+    color: #ff0000;
+    font-family: 'Outfit', sans-serif; 
+}
+
 .formDescription h1 {
     font-family: 'Outfit', sans-serif; 
     text-align: center;

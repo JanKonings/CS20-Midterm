@@ -16,13 +16,13 @@
     <div class="navbar">
         <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
         <h1><a href="index.html">OceanAid</a></h1>
-        <div class="nav-links">
+        <div class="navLinks">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
             <a id="species" href="species.html">Species</a>
             <a id="pollution" href="pollution.html">Pollution</a>
             <a id="getInvolved" href="getInvolved.html">Get Involved</a>
             <a id="contact" href="contact.html">Contact</a>
-            <a id="donate-link" href="donate.html">Donate</a>
+            <a id="donateLink" href="donate.html">Donate</a>
             <button type="button" id="hamburger">&equiv;</button>
         </div>
     </div>
@@ -41,20 +41,33 @@
     <!-- jQuery script for hamburger menu functionality -->
     <script>
         $(document).ready(function() {
-            // Toggle hamburger menu on click
+            // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
+                // if the hamburger menu is already displayed, the hamburger button will change to X icon to anticipate the change
+                // of slidetoggle effect
                 if ($(".hamburgerMenu").css("display") === "block") {
                     $("#hamburger").html("&equiv;");
+                // if the hamburger menu is not displayed, the hamburger button will change to the hamburger icon to anticipate the change
+                // of slidetoggle effect
                 } else {
                     $("#hamburger").html("&times;");
                 }
+                // using Jqueries slideToggle to turn the display of the hamburgerMenu div to block
+                // and make the duration "fast"
+                // the slidetoggle will automatically switch the display of the hamburgerMenu div from block to none
+                // and vice versa
                 $(".hamburgerMenu").slideToggle("fast");
             });
 
-            // Hide hamburger menu on window resize if width is greater than 730px
+            // when the window is resized, if the window is greater than 730px, the hamburger menu will hide
+            // because the hamburger menu is only visible when the window is less than 730px
+            // this is just for the edge case if the user resizes the window passed 730px while the hamburger menu
+            // is still dropped down
             $(window).resize(function() {
+                // if the window is greater than 730px, the hamburger menu will hide
                 if ($(window).width() > 730) {
                     $(".hamburgerMenu").hide();
+                    // the hamburger button will change to the hamburger icon
                     $("#hamburger").html("&equiv;");
                 }
             });
