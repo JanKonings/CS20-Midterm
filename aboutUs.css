@@ -26,7 +26,6 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(68, 77, 93);
-    height: 600px;
 }
 
 .meet-the-team h2 {
@@ -50,6 +49,11 @@
 .team-photos {
     display: flex;
     gap: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .member {
