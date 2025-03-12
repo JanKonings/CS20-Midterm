@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="index.css">
+    <!-- link for font -->
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- link for Jqeury use -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+    <!-- setting consistent font throughout page -->
     <style type="text/css">
         h1, h2, h3 {
             font-family: 'PT Serif', serif;
@@ -19,9 +22,12 @@
 </head>
 
 <body>  
+   <!-- header bar, includes navigation and logo -->
     <div class="navbar">
+        <!-- logo/org-name -->
         <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
         <h1><a href="index.html">OceanAid</a></h1>
+        <!-- navigations links -->
         <div class="navLinks">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
             <a id="species" href="species.html">Species</a>
@@ -32,7 +38,7 @@
             <button type="button" id="hamburger">&equiv;</button>
         </div>
     </div>
-
+    <!-- code for the popout hamburger menu that appears when the screen is resized -->
     <div class="hamburgerMenu">
         <div class="navItems">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
@@ -44,14 +50,16 @@
     </div>
 
     
-
+    <!-- mission statment div -->
     <div class="mission">
+        <!-- background image is used for fading, and this is its complement image that spans the div -->
         <img src="Images/hp1.jpg" id="missionImg">
+        <!-- actual statmenet with an absoulte position in the center of the mission div -->
         <div class="missionStatement">
             <h2>Protecting marine life and preserving our oceans by combating waste, restoring habitats, and inspiring global action.</h2>
         </div>
     </div>
-
+    <!-- div for the problem and solution section of page -->
     <div class="issue">
         <div class="problem">
             <h3>The Problem</h3>
@@ -62,7 +70,7 @@
             <p>OceanAid is dedicated to protecting and restoring our oceans. Through conservation efforts, cleanup initiatives, and education, we empower communities to take action. We support sustainable practices, advocate for stronger environmental policies, and work with volunteers to remove waste from beaches and waterways. Together, we can ensure a healthier, thriving ocean for all.</p>
         </div>
     </div>
-
+    <!-- div for the how you can help section including links to other pages -->
     <div class="help">
         <h3>How you can help</h3>
         <ul id="helpOptions">
@@ -73,12 +81,14 @@
         </ul>
     </div>
 
+    <!-- footer bar, includes contact information and navigation -->
     <div class="footer">
+        <!-- left side of the footer, includes the brand name and address -->
         <div class="footer-left">
             <h1>OA</h1>
             <p>43 Latin Way, Medford, MA 02155</p>
         </div>
-        
+        <!-- middle of footer includes page navigation links -->
         <div class="footer-middle">
             <p>Where to?</p>
             <div class="nav-links-bottom">
@@ -90,7 +100,7 @@
                 <a id="donate-link" href="donate.html">Donate</a>
             </div>
         </div>
-        
+        <!-- right side of footer holds the copywrite -->
         <div class="footer-right">
             <p>All Rights Reserved 2014-2025 OceanAid Inc.</p>
 
@@ -98,6 +108,7 @@
     </div>
 
     <script>
+        // Jquery code for the hamburger menu and the mission image slideshow
         $(document).ready(function() {
             // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
@@ -130,17 +141,20 @@
                 }
             });
 
+            // javascript associative array to hold the images for the mission image slideshow
             let images = {
                 "img0": "Images/hp1.jpg",
                 "img1": "Images/hp2.jpg",
                 "img2": "Images/hp3.jpg"
             };
 
-            let currIndex = 0;
+            let currIndex = 0; // global variable to track the img index
 
             function changeImage() {
                 $("#missionImg").fadeTo(2000, 0, function() {
-                    // Update indexes
+                    // incrementing the index to the next image (which should currently be the background image)
+                    // then getting the image after that, which should be the new image for the background
+                    // basically skipping two images ahead to get next src image
                     currIndex = (currIndex + 1) % 3;
                     var nextIndex = (currIndex + 1) % 3;
 
@@ -150,7 +164,8 @@
 
                     // Fade in mission image
                     $("#missionImg").fadeTo(2000, 1, function() {
-                        // update index to index after the new mission img
+                        // update index to index after the new mission img which should be the background image 
+                        // to get ready for the next cycle, where the src img will fade out, revealing this img
                         var nextBackgroundIndex = (nextIndex + 1) % 3;
                         var backgroundSource = images["img" + (nextIndex)];
                         $(".mission").css("background-image", `url(${backgroundSource})`);
