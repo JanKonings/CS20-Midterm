@@ -27,6 +27,8 @@ ul li{
 
 .images{
     padding-bottom: 50px;
+    padding-left:20px;
+    padding-right:20px;
 }
 
 .images img {
@@ -145,8 +147,6 @@ body{
 
     .images{
         box-sizing: border-box;
-        padding-left: 20px;
-        padding-bottom: 20px;
     }
 }
 
