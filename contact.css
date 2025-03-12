@@ -1,4 +1,4 @@
-html, body{
+body{
     background-image: url("Images/contactBackground.jpg");
     background-size: cover;
     height: 120%;
@@ -47,6 +47,7 @@ html, body{
     border-radius: 5px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'PT Serif';
 }
 
 .form input[type="submit"]:hover {
