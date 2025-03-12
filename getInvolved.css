@@ -38,6 +38,13 @@
     margin-bottom: 100px;
 }
 
+@media (max-width: 1000px) {
+    .atStakeSection {
+        flex-direction: column;
+    }
+
+}
+
 h3 {
     font-size: 30px;
     color: #2c3e50;
@@ -91,6 +98,7 @@ h3 {
     margin: 20px 50px; 
     width: 30%;
     text-align: center;
+    min-width: 241px;
 }   
 
 .cause p {
@@ -114,6 +122,9 @@ h3 {
 .whyDonate p {
     font-size: 16px;
     color: #414141;
+    padding-left: 50px;
+    padding-right: 50px;
+    box-sizing: border-box;
 }
 
 .plasticPollutionGI {
@@ -123,18 +134,45 @@ h3 {
     flex-direction: row;
     background-color: rgb(221, 233, 240);
     width: auto;
-    gap: 6vw;
+    gap: 2vw;
     text-align: left;
-    padding-right: 50px;
 }
 
+.plasticPollutionGI p {
+    padding-right: 30px;
+}
 
 .textAndButton {
     display: flex;
     flex-direction: column;
 }
 
+#plasticPollutionGIImg {
+    width: 50%; 
+    height: 100%;
+}
+
+@media (max-width: 1116px) {
+    .plasticPollutionGI {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #plasticPollutionGIImg {
+        width: 100%;
+    }
+
+    .plasticPollutionGI p, h3, #contact1 {
+        margin: 20px;
+    }
+
+
+    
+
+}
 .causeP {
     margin: 0;
     padding: 0;
 }
+
