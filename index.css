@@ -44,7 +44,7 @@
 
 .problem, .solution {
     flex: 1;
-    height: 300px;
+    height: 350px;
     text-align: center;
     padding: 20px;
     border-radius: 5px;
@@ -73,7 +73,7 @@
 }
 
 .issue p {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .help {
