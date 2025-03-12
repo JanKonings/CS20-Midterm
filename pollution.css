@@ -25,12 +25,15 @@ ul li{
     box-sizing: border-box;
 }
 
+.images{
+    padding-bottom: 50px;
+}
+
 .images img {
     margin-top: 50px;
     border-radius: 10px;
     width: 95%;
     height: 560px;
-    padding-bottom: 50px;
 }
 
 body{
@@ -144,6 +147,12 @@ body{
         box-sizing: border-box;
         padding-left: 20px;
         padding-bottom: 20px;
+    }
+}
+
+@media(max-width:480px){
+    .images img{
+        height: 450px;
     }
 }
 
