@@ -21,7 +21,10 @@
     font-size: 23px;
     color: #2c3e50;
     margin-bottom: 100px;
+    padding: 20px;
+    text-align: center;
 }
+
 
 .getInvolved-content img {
     border-radius: 5px;
