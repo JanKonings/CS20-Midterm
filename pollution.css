@@ -1,8 +1,8 @@
 .pollutionContent {
     display: flex;
     justify-content: space-between;
-    height: 700px;
-    
+    /* height: 700px; */
+    box-sizing: border-box;
 }
 
 .left-panel {
@@ -22,6 +22,11 @@ ul li{
     margin-left: 20px;
     color:#2c3e50;
     width: 650px;
+    box-sizing: border-box;
+}
+
+.images{
+    padding-bottom: 50px;
 }
 
 .images img {
@@ -72,6 +77,8 @@ body{
     border-radius: 5px;
     margin-top: 15px;
     margin-left: 20px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
 }
 
 .radio-buttons label:hover{
@@ -140,6 +147,12 @@ body{
         box-sizing: border-box;
         padding-left: 20px;
         padding-bottom: 20px;
+    }
+}
+
+@media(max-width:500px){
+    .images img{
+        height: 450px;
     }
 }
 
