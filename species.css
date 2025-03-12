@@ -1,3 +1,7 @@
+body {
+    background: rgb(247, 243, 238);
+}
+
 .info {
     display: flex;
     margin: 50px;
