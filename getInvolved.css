@@ -48,7 +48,7 @@ h3 {
     color: #4f565e;
 }
 
-#contact1 {
+#donateLink, #contact1 {
     width: 30%;
     display: flex;
     justify-content: center;
@@ -61,6 +61,7 @@ h3 {
     margin-top: -70px;
     margin-bottom: 40px;
     height: 30px;
+    font-weight: bold;
 }
 
 #contact1:hover {
@@ -83,7 +84,7 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #081a3c;
+    background-color: rgb(247, 243, 238);
     border-radius: 5px;
     color: #2c3e50;
     margin: 20px 50px; 
@@ -93,16 +94,22 @@ h3 {
 
 .cause p {
     font-size: 16px;
-    color: #b0c4e9;
+    color: #5a5a5a;
 }
 
 .whyDonate {
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(213, 210, 209);
+    background-color: rgb(233, 232, 231);
     width: 100%;
     text-align: center;
-    padding: 50px;
+    margin-bottom: 80px;
+}
+
+.whyDonate p {
+    font-size: 16px;
+    color: #414141;
 }
