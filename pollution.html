@@ -214,9 +214,9 @@
 
             // Function to handle image fading for slideshow
             function fadeImages(){
-                //if the image has been clicked an odd number of times return
+                //if the image has been clicked an even number of times return
                 //from the slideshow.
-                if(clicks % 2 == 0){
+                if(clicks % 2 == 1){
                     return;
                 }
                 $(".images img").fadeOut(1000, function() {
