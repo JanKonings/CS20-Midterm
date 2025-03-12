@@ -91,7 +91,6 @@
     padding: 20px;
     border-radius: 10px;
     opacity: 80%;
-    /* border: 1px solid #ffffff; */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
 
 }
@@ -104,11 +103,8 @@
     list-style-position: inside;
     border-radius: 10px;
     opacity: 80%;
-    line-height: 2; /* Adjust the line height to control spacing */
-    /* border: 1px solid #ffffff; */
+    line-height: 2; /* Adjust the line height to control spacing to fit button */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
-
-    
 }
 
 .help ul li {
@@ -131,6 +127,7 @@
     color: #ffffff;
 }
 
+/* Resizing for all page elements */
 @media (max-width: 900px) {
     .missionStatement h2 {
         font-size: 25px;
