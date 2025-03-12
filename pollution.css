@@ -61,6 +61,9 @@ body{
     margin: 0 5px;
     border-radius: 5px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     cursor: pointer;
 }
 
@@ -163,4 +166,10 @@ body{
     .images img{
         height: 400px;
     }
+
+    /* .radio-buttons label[for="ocean"],
+    .radio-buttons label[for="river"],
+    .radio-buttons label[for="plastic"] {
+        margin-top: 40px;
+    } */
 }
