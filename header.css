@@ -178,3 +178,9 @@ body {
     }
 }
 
+@media (max-width: 350px) {
+    .navItems a {
+        font-size: 10px;
+    }
+}
+
