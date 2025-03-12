@@ -6,6 +6,7 @@
     align-items: center;
     flex-direction: column;
     background-color: rgb(247, 243, 238);
+    width: 100%;
 }
 
 .getInvolved-content h2 {
@@ -25,3 +26,65 @@
 .getInvolved-content img {
     border-radius: 5px;
 }
+
+.atStakeSection {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(247, 243, 238);
+    gap: 6vw;
+}
+
+.atStakeSection h3 {
+    font-size: 30px;
+    color: #2c3e50;
+}
+
+.atStakeSection p {
+    font-size: 16px;
+    color: #4f565e;
+}
+
+#contact1 {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #b0c4e9;
+    border-radius: 5px;
+    color: #2c3e50;
+    text-decoration: none;
+    margin-top: -70px;
+    margin-bottom: 40px;
+    height: 30px;
+}
+
+#contact1:hover {
+    background-color: #ffffff;
+}
+
+.joinCauses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(158, 118, 70);
+    width: 100%;
+    gap: 1vw;
+}
+
+.cause {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #081a3c;
+    border-radius: 5px;
+    color: #2c3e50;
+    margin: 20px 50px; 
+
+}   
