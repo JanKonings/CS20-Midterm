@@ -186,7 +186,7 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 525px) {
     .help ul {
         font-size: 18px;
     }
