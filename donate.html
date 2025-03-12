@@ -90,8 +90,8 @@
         <form id="donateForm" method="GET">
             <!-- monthly or single time donation -->
             <div class="buttonContainer">
-                <button type="button" id="singleTime"> One-Time</button>
-                <button type="button" id="monthly"> Monthly</button>
+                <button type="button" id="singleTime"> One-Time*</button>
+                <button type="button" id="monthly"> Monthly*</button>
             </div>
             <!-- donation amount -->
             <div class="amount">
@@ -109,28 +109,28 @@
             <!-- full name, email and number -->
             <div class="personalInfo">
                 <div class="infoElement">
-                    <h3>First Name</h3>
+                    <h3>First Name*</h3>
                     <input type="text" id="first" class="nameForm">
                 </div>
                 
                 <div class="infoElement">
-                    <h3>Last Name</h3>
+                    <h3>Last Name*</h3>
                     <input type="text" id="last" class="nameForm">
                 </div>
 
                 <div class="infoElement">
-                    <h3>Email Address</h3>
+                    <h3>Email Address*</h3>
                     <input type="text" id="email" class="nameForm">
                 </div>
 
                 <div class="infoElement">
-                    <h3>Phone Number</h3>
+                    <h3>Phone Number*</h3>
                     <input type="text" id="phone" class="nameForm">
                 </div>
             </div>
             <!-- Payment method -->
             <div class="creditCardInfo">
-                <h3>Payment Method</h3>
+                <h3>Payment Method*</h3>
                 <select id="paymentMethod">
                     <option value="" disabled selected>Choose Method</option>
                     <option value="Credit">Credit/Debit Card</option>
@@ -191,7 +191,7 @@
                     if ($(this).val() === "Credit") {
                         // create the input elements for the credit card information
                         output += "<input type='text' id='cardNum' class='spanText' placeholder='Card Number'>";
-                        output += "<h3>Expiration Details</h3>";
+                        output += "<h3>Expiration Details*</h3>";
                         output += "<div class='cardInfo'>";
                         output += "<select id='monthSelect' name='month'>" +
                             "<option value='' disabled selected>Month</option>" +
