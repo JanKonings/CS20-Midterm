@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html> 
 <head>
-    <title>Ocean Aid</title>
+    <title>Species</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="species.css">
     <link rel="stylesheet" href="footer.css">
+    <!-- link for the PT serif font -->
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- link for jqeury -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+    <!-- setting consistent fonts for the h1, h2, and h3 tags -->
     <style type = "text/css">
         h1, h2, h3, p {
             font-family: 'PT Serif', serif;
@@ -17,9 +20,12 @@
 </head>
 
 <body>
+    <!-- header bar, includes navigation and logo -->
     <div class="navbar">
+        <!-- logo/org-name -->
         <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
         <h1><a href="index.html">OceanAid</a></h1>
+        <!-- navigations links -->
         <div class="navLinks">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
             <a id="species" href="species.html">Species</a>
@@ -30,7 +36,7 @@
             <button type="button" id="hamburger">&equiv;</button>
         </div>
     </div>
-
+    <!-- code for the popout hamburger menu that appears when the screen is resized -->
     <div class="hamburgerMenu">
         <div class="navItems">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
@@ -44,6 +50,7 @@
     
 
     <script>
+        // when the document is ready, the hamburger menu will slide down when the hamburger button is clicked
         $(document).ready(function() {
             // when the hamburger button is clicked, the hamburger menu will slide down
             $("#hamburger").click(function() {
@@ -78,12 +85,15 @@
         })
     </script>
 
+    <!-- main content area -->
+    <!-- page header div -->
     <div class="info">
-        <h2>Species</h2>
+        <h2>Endangered Species</h2>
         <p>Discover marine species threatened by pollution and why they need our help.</p>
         <p>To get involved and help make a difference please visit our <a id="getInvolved" href="getInvolved.html">Get Involved</a> page.</p>
     </div>
 
+    <!-- div to hold the filter button and selection bar -->
     <div class="filterSpecies">
         <select id="Categories">
             <option value="all">All Animal Groups</option>
@@ -98,15 +108,17 @@
     </div>
 
     <div class="output">
-
+        <!-- output from JSON file according to filter will be displayed here -->
     </div>
 
+    <!-- footer bar, includes contact information and navigation -->
     <div class="footer">
+        <!-- left side of the footer, includes the brand name and address -->
         <div class="footer-left">
             <h1>OA</h1>
             <p>43 Latin Way, Medford, MA 02155</p>
         </div>
-        
+        <!-- middle of footer includes page navigation links -->
         <div class="footer-middle">
             <p>Where to?</p>
             <div class="nav-links-bottom">
@@ -118,10 +130,9 @@
                 <a id="donate-link" href="donate.html">Donate</a>
             </div>
         </div>
-        
+        <!-- right side of footer holds the copywrite -->
         <div class="footer-right">
             <p>All Rights Reserved 2014-2025 OceanAid Inc.</p>
-
         </div>
     </div>
 
