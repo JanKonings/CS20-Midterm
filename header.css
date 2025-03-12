@@ -4,7 +4,6 @@ body {
 }
 
 .navbar h1 {
-    font-family: 'Outfit', sans-serif; 
     color: #f7faff;
     font-size: 20px
 }
@@ -50,7 +49,6 @@ body {
 .navLinks a {
     display: flex;
     align-items: center;
-    font-family: 'Outfit', sans-serif; 
     text-decoration: none;
     color: #b0c4e9;
     font-size: 16px; 
