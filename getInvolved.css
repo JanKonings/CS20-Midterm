@@ -15,12 +15,16 @@
     margin-top: 70px;
     padding: 20px;
     color: #2c3e50;
+    text-align: center;
 }
 
 .getInvolved-content p {
     font-size: 23px;
     color: #2c3e50;
     margin-bottom: 100px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .getInvolved-content img {
@@ -36,7 +40,26 @@
     background-color: rgb(247, 243, 238);
     gap: 6vw;
     margin-bottom: 100px;
+    
 }
+
+.atStakeSection h3 {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+}
+
+.atStakeSection p {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+}
+
+.atStakeSection img {
+    width: 55%; 
+    height: auto;
+}
+
 
 @media (max-width: 1000px) {
     .atStakeSection {
@@ -45,9 +68,6 @@
         align-items: center;
 
     }
-    .atStakeSection p {
-        text-align: center;
-    }
 
     .sectionText {
         display: flex;
@@ -55,6 +75,15 @@
         align-items: center;
         flex-direction: column;
     }
+
+    .atStakeSection img {
+        width: 80%;
+    }
+}
+
+
+.sectionText {
+    min-width: 235px;
 }
 
 h3 {
