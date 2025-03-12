@@ -46,6 +46,7 @@ h3 {
 .atStakeSection p {
     font-size: 16px;
     color: #4f565e;
+    margin-bottom: 30px;
 }
 
 #donateLinkGI, #contact1 {
@@ -58,8 +59,7 @@ h3 {
     border-radius: 5px;
     color: #2c3e50;
     text-decoration: none;
-    margin-top: -70px;
-    margin-bottom: 40px;
+
     height: 30px;
     font-weight: bold;
 }
@@ -77,6 +77,7 @@ h3 {
     background-color: rgb(247, 243, 238);
     width: 100%;
     gap: 1vw;
+    margin-bottom: 100px;
 }
 
 .cause {
@@ -95,6 +96,7 @@ h3 {
 .cause p {
     font-size: 16px;
     color: #5a5a5a;
+    margin: 20px;
 }
 
 .whyDonate {
@@ -112,4 +114,27 @@ h3 {
 .whyDonate p {
     font-size: 16px;
     color: #414141;
+}
+
+.plasticPollutionGI {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(221, 233, 240);
+    width: auto;
+    gap: 6vw;
+    text-align: left;
+    padding-right: 50px;
+}
+
+
+.textAndButton {
+    display: flex;
+    flex-direction: column;
+}
+
+.causeP {
+    margin: 0;
+    padding: 0;
 }
