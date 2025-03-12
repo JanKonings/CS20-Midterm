@@ -49,6 +49,12 @@
         text-align: center;
     }
 
+    .sectionText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }
 
 h3 {
