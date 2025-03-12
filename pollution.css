@@ -84,11 +84,13 @@ body{
     font-weight: bold;
 }
 
+/* hover effect for radio buttons */
 .radio-buttons label:hover{
     background-color: #ffffff;
     color: #2c3e50;
 }
 
+/* hover effect for get involved button */
 #getInvolvedPollution:hover{
     background-color: #ffffff;
     color: #2c3e50;
