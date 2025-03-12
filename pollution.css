@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     height: 700px;
+    
 }
 
 .left-panel {
@@ -32,6 +33,7 @@ ul li{
 
 body{
     background-color: #b0c4e9;
+    font-family: 'PT Serif';
 }
 
 .radio-buttons {
@@ -70,6 +72,16 @@ body{
     border-radius: 5px;
     margin-top: 15px;
     margin-left: 20px;
+}
+
+.radio-buttons label:hover{
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+
+#getInvolvedPollution:hover{
+    background-color: #ffffff;
+    color: #2c3e50;
 }
 
 @media (max-width: 1375px){
