@@ -12,6 +12,10 @@ body{
     flex: 1;
 }
 
+.formContent {
+    box-sizing: border-box;
+}
+
 .form form {
     max-width: 600px;
     margin: 0 auto 100px auto;
