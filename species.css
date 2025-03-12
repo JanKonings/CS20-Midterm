@@ -1,5 +1,6 @@
 body {
     background: rgb(247, 243, 238);
+    font-family: 'PT Serif', serif;
 }
 
 .info {
@@ -8,7 +9,7 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 30px;    
-    background-color: #b0c4e9;
+    background-color: rgb(210, 219, 223);
     gap: 10px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -117,7 +118,7 @@ body {
     align-items: center;  
     justify-content: center;  
     width: 100%;
-    background-color: #b0c4e9;
+    background-color: rgb(210, 219, 223);
     padding: 10px;
     padding-top: 20px;
     gap: 20px;
@@ -176,7 +177,7 @@ select:hover {
     width: 100%;
     padding: 20px;
     border-radius: 5px;
-    background-color: #b0c4e9;
+    background-color: rgb(210, 219, 223);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -201,7 +202,6 @@ h3 {
     max-width: 600px; 
     height: auto; 
     margin: 0 auto; 
-    border: 2px solid #1f65ab;
     border-radius: 5px;
 }
 
