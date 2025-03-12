@@ -21,10 +21,7 @@
     font-size: 23px;
     color: #2c3e50;
     margin-bottom: 100px;
-    padding: 20px;
-    text-align: center;
 }
-
 
 .getInvolved-content img {
     border-radius: 5px;
@@ -44,6 +41,12 @@
 @media (max-width: 1000px) {
     .atStakeSection {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .atStakeSection p {
+        text-align: center;
     }
 
 }
@@ -60,7 +63,7 @@ h3 {
 }
 
 #donateLinkGI, #contact1 {
-    width: 30%;
+    width: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,12 +72,11 @@ h3 {
     border-radius: 5px;
     color: #2c3e50;
     text-decoration: none;
-
     height: 30px;
     font-weight: bold;
 }
 
-#contact1:hover {
+#contact1:hover, #donateLinkGI:hover {
     background-color: #ffffff;
 }
 
@@ -170,6 +172,14 @@ h3 {
         margin: 20px;
     }
 
+    .textAndButton {
+        align-items: center;
+
+    }
+
+    .plasticPollutionGI p, h3 {
+        text-align: center;
+    }
 
     
 
