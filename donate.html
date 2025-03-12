@@ -6,9 +6,12 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="donate.css">
     <link rel="stylesheet" href="footer.css">
+    <!-- link for font -->
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- link for jquery use -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+    <!-- setting a consistent font for the page headers -->
     <style type = "text/css">
         h1, h2, h3 {
             font-family: 'PT Serif', serif;
@@ -16,10 +19,12 @@
     </style>
 </head>
 <body>
-    <!-- div for the whole navbar -->
+    <!-- header bar, includes navigation and logo -->
     <div class="navbar">
+        <!-- logo/org-name -->
         <a href="index.html"><img src="Images/oalogo.png" alt="Ocean Aid Logo"></a>
         <h1><a href="index.html">OceanAid</a></h1>
+        <!-- navigations links -->
         <div class="navLinks">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
             <a id="species" href="species.html">Species</a>
@@ -30,7 +35,7 @@
             <button type="button" id="hamburger">&equiv;</button>
         </div>
     </div>
-
+    <!-- code for the popout hamburger menu that appears when the screen is resized -->
     <div class="hamburgerMenu">
         <div class="navItems">
             <a id="aboutUs" href="aboutUs.html">About Us</a>
@@ -76,15 +81,19 @@
         })
     </script>
 
+    <!-- div to hold donate form, and have the background img -->
     <div class="donate">
         <h2>The ocean depends on you!</h2>
         <p>Thank you for considering a donation to OceanAid. Your contribution will help us continue our work to protect marine life and preserve the health of our oceans. Please fill out the form below to make a donation.</p>
 
+        <!-- donate form with multiple different form elements -->
         <form id="donateForm" method="GET">
+            <!-- monthly or single time donation -->
             <div class="buttonContainer">
                 <button type="button" id="singleTime"> One-Time</button>
                 <button type="button" id="monthly"> Monthly</button>
             </div>
+            <!-- donation amount -->
             <div class="amount">
                 <input type="radio" name="donationAmount" id="10" class="customRadio">
                 <label for="10">$10</label>
@@ -95,9 +104,9 @@
                 <input type="radio" name="donationAmount" id="100" class="customRadio">
                 <label for="100">$100</label>
             </div>
-
+            <!-- custom donation amount -->
             <input type="text" id="customAmount" class="spanText" placeholder="Custom Amount : $">
-
+            <!-- full name, email and number -->
             <div class="personalInfo">
                 <div class="infoElement">
                     <h3>First Name</h3>
@@ -119,7 +128,7 @@
                     <input type="text" id="phone" class="nameForm">
                 </div>
             </div>
-
+            <!-- Payment method -->
             <div class="creditCardInfo">
                 <h3>Payment Method</h3>
                 <select id="paymentMethod">
@@ -127,7 +136,7 @@
                     <option value="Credit">Credit/Debit Card</option>
                     <option value="Bank">Bank Account</option>
                 </select>
-
+                <!-- empty container div to hold the output for the selected payment type -->
                 <div class="method"></div>
             </div>
             
@@ -180,7 +189,7 @@
                 $("#paymentMethod").change(function(){
                     // create a variable to hold the output
                     var output = "";
-                    // check the value of the select element
+                    // check the value of the select element and if its credit, create the input elements for the credit card information
                     if ($(this).val() === "Credit") {
                         // create the input elements for the credit card information
                         output += "<input type='text' id='cardNum' class='spanText' placeholder='Card Number'>";
@@ -341,12 +350,15 @@
             });
         </script>
     </div>
+
+    <!-- footer bar, includes contact information and navigation -->
     <div class="footer">
+        <!-- left side of the footer, includes the brand name and address -->
         <div class="footer-left">
             <h1>OA</h1>
             <p>43 Latin Way, Medford, MA 02155</p>
         </div>
-        
+        <!-- middle of footer includes page navigation links -->
         <div class="footer-middle">
             <p>Where to?</p>
             <div class="nav-links-bottom">
@@ -358,10 +370,9 @@
                 <a id="donate-link" href="donate.html">Donate</a>
             </div>
         </div>
-        
+        <!-- right side of footer holds the copywrite -->
         <div class="footer-right">
             <p>All Rights Reserved 2014-2025 OceanAid Inc.</p>
-
         </div>
     </div>
 </body>
