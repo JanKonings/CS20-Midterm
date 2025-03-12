@@ -61,6 +61,17 @@ body{
     color: #2c3e50
 }
 
+#getInvolvedPollution{
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: 1px solid #2c3e50;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
 @media (max-width: 1375px){
     .left-panel{
         width: 90%;

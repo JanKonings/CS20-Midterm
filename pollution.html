@@ -98,6 +98,10 @@
                 </p1>
                 <p1 id = "content2"></p1>
             </div>
+            
+            <!-- button to get involved -->
+            <button id="getInvolvedPollution" onclick="location.href='getInvolved.html'">Get Involved</button>
+
         </div>
         <div class="right-panel">
             <!-- Image section for pollution images -->
@@ -141,6 +145,7 @@
             startSlideshow();
             $('input[type=radio][name=pollution]').change(function() {
                 // Update content based on selected pollution type
+                //update with content for ocean
                 if (this.value === 'ocean') {
                     imageUrls = ["Images/ocean1.jpg", "Images/ocean2.jpg"];
                     $('#title').html("Ocean Pollution");
@@ -156,6 +161,7 @@
                     </ul>
                     `);
                     $('#content2').html("You can help reduce ocean pollution by participating in beach cleanups, reducing your use of single-use plastics, properly disposing of waste, supporting policies that protect the ocean, and spreading awareness about the issue.");
+                //update with content for rivers
                 } else if (this.value === 'rivers') {
                     imageUrls = ["Images/rivers1.jpg", "Images/rivers2.jpg"];
                     $('#title').html("River Pollution");
@@ -170,6 +176,7 @@
                     </ul>
                     `);
                     $('#content2').html("You can help reduce river pollution by properly disposing of waste, using environmentally friendly products, reducing the use of harmful chemicals, participating in river cleanups, and supporting policies that protect water quality.");
+                //update with content for The Great Pacific Garbage Patch
                 } else if (this.value === 'GPGP') {
                     imageUrls = ["Images/GPGP1.jpg", "Images/GPGP2.jpg"];
                     $('#title').html("The Great Pacific Garbage Patch");
@@ -184,6 +191,7 @@
                     </ul>
                     `);
                     $('#content2').html("You can help address the issue of the Great Pacific Garbage Patch by reducing your plastic consumption, participating in beach cleanups, supporting organizations that work to clean up ocean plastic, advocating for policies that reduce plastic production and improve waste management, and spreading awareness about the impact of plastic pollution on marine environments.");
+                //update with content for plastic
                 } else if (this.value === 'plastic') {
                     imageUrls = ["Images/plastic1.jpg", "Images/plastic2.jpg"];
                     $('#title').html("Plastic Pollution");
