@@ -18,11 +18,7 @@ body{
 
 .form form {
     max-width: 600px;
-<<<<<<< HEAD
-    /* margin: 0 10px 100px 10px; */
-=======
     margin: 0 auto 100px auto;
->>>>>>> 92e0fc7457314d68fa6eb4547d6ab2d8ffe70c4c
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
