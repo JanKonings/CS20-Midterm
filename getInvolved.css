@@ -60,7 +60,7 @@
     height: auto;
 }
 
-
+/* resizing */
 @media (max-width: 1000px) {
     .atStakeSection {
         flex-direction: column;
@@ -192,6 +192,7 @@ h3 {
     height: 100%;
 }
 
+/* resizing */
 @media (max-width: 1116px) {
     .plasticPollutionGI {
         justify-content: center;
@@ -216,11 +217,9 @@ h3 {
         text-align: center;
     }
 
-    
-
 }
-.causeP {
-    margin: 0;
-    padding: 0;
+    .causeP {
+        margin: 0;
+        padding: 0;
 }
 
