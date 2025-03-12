@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     height: 700px;
+    
 }
 
 .left-panel {
@@ -32,6 +33,7 @@ ul li{
 
 body{
     background-color: #b0c4e9;
+    font-family: 'PT Serif';
 }
 
 .radio-buttons {
